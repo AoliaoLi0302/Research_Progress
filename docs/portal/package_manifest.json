@@ -1,0 +1,29 @@
+{
+  "release_id": "e9b9a6be56ab6445c7f00e53b2c28e949f7cf8b984a11dacf2be1848c9792e53",
+  "identity": {
+    "metrics": "8e01a7046128ff30796a353336643d1946e26e5c58fa1775aa6a9403482e68eb",
+    "web": {
+      "assets/portal.css": "bebe7a24f7ff8767916f12e569ecb176eed0c3987f79edad42107e0725968ef4",
+      "assets/portal.js": "86629f7f1ca63fabd24dd126e255ff65ad22002130bb60963bcc01b225219130",
+      "index.html": "2a0994c7a67a4cc91dd5c05476c776bc7babe3a2a0fe61c03270a43ab09bb4d3"
+    },
+    "plotly": "9d1af0f627d3cd1bfdffca2c57c3593c83267cd2e3ca3b3f345bfb787363ea05",
+    "builder": "45aebc1ae8d3a7b4f87aa8af1e3ecd7cf163c5085ac972da4becbb737ba8e6a2",
+    "adapter": "4b162a8290f3a48b23bd82d8901d8d3d467c272dbf835a9372d16b7243936b97",
+    "catalog_hash": "7c65bda1788fadd905a08455505db5f1b0cb8518ab9231bb19ff7da2c30af8a2",
+    "generated_at": "2026-09-30T15:48:38.398888+00:00",
+    "publication_renderer": "77c9a896e8a991906fe95ae4f7b34774d585508c3392eb52335796fb9a2983d7",
+    "publication_url": "https://aoliaoli0302.github.io/Research_Progress/portal/"
+  },
+  "files": {
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "assets/plotly.min.js": "a32e817bb121e9e89016ce4cee85ee3f1c66f6a6c95c4b53a5f488f77756d7a4",
+    "assets/portal.css": "bebe7a24f7ff8767916f12e569ecb176eed0c3987f79edad42107e0725968ef4",
+    "assets/portal.js": "86629f7f1ca63fabd24dd126e255ff65ad22002130bb60963bcc01b225219130",
+    "data/e9b9a6be56ab6445c7f00e53b2c28e949f7cf8b984a11dacf2be1848c9792e53/catalog.json": "59d0284e411e0e894e240ea64568052634ef46c4fe1d151be015a242f4094ce8",
+    "index.html": "2a0994c7a67a4cc91dd5c05476c776bc7babe3a2a0fe61c03270a43ab09bb4d3",
+    "release.json": "ea67a6480790e0e0ad990f519211c38e28a02bc31775fb87019fdde91749cbc6",
+    "research/RESEARCH_CURRENT.md": "52e89e8981059015c118f60a88c73b660f0cc27c79993e38b51967ed340df62e",
+    "research/RESEARCH_INDEX.md": "48c5909950766ad3b13dc86def2a070e0114dbbebd938b205e4426e12686901d"
+  }
+}
