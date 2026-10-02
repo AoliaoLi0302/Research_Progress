@@ -1,6 +1,6 @@
 # 期货短周期研究当前结果
 
-发布版本：`ac63c79a0e7706e7a20751c592e3187a8f24c717f56105cc0c3c73db2f8182e2`；指标快照时间：2026-10-02T15:43:36.612832+00:00。
+发布版本：`f97c4dec35b3506c76454c1189575f6eb8bc78a469676c94612803da378181be`；指标快照时间：2026-10-02T22:08:08.771066+00:00。
 
 [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/) · [研究来源索引](RESEARCH_INDEX.md)
 
@@ -19,6 +19,12 @@
 | route-B B3 | candidate | 20260507–20260603（2） | passed | pending |
 | Maker38日 有缺口参考 | reference_with_gaps | 20260507–20260630（38） | gaps | pending |
 | Maker 四窗 L1 TTL2s HOLD/LF/EVENT | candidate | 20260507–20260603（2） | passed | pending |
+| AG B1 aligned taker 2s | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| AG C1_COMBO_FULL_O aligned taker 2s | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| AG F2_current aligned taker 2s | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| AU B1 aligned taker 2s | candidate | 20260507–20260709（45） | passed | pending |
+| AU C1_COMBO_FULL_O aligned taker 2s | candidate | 20260507–20260709（45） | passed | pending |
+| AU F2_current aligned taker 2s | candidate | 20260507–20260709（45） | passed | pending |
 
 ## XAG_B1
 
@@ -258,4 +264,142 @@
 - fill_markout：blocked；Existing fill+2s and cancel-mid/quote files await supplemental H1 source registration; common-H MTM is not a substitute.
 - hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
 - hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AG B1 aligned taker 2s
+
+评价：exp_20260930_d1a_taker_fullperiod_entry_economics_v1/AG_B1_D1A_actual_fill_2s/run-c1f3438f320d41bf9c568c709e0bbaac；来源运行：run-c1f3438f320d41bf9c568c709e0bbaac。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 10721 | count | accepted completed trades | count | known |
+| completed_subset_net_bps_sum | -3206.336245429374 | bps | sum of per-trade entry-notional returns; unresolved inventory excluded | sum_trade_bps | known |
+| completed_subset_mean_net_bps | -0.29907063197736905 | bps | accepted completed trades | mean | known |
+| fullperiod_net_unit_cash | unknown | unit cash | unit quantity1, multiplier1; only defined if final inventory flat | sum_cash | unavailable |
+| pooled_prediction_IC | 0.24063612648847696 | correlation | common finite model/2s-label rows | pooled_rows | known |
+| pooled_prediction_RankIC | 0.2697839731757202 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
+
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory open; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AG C1_COMBO_FULL_O aligned taker 2s
+
+评价：exp_20260930_d1a_taker_fullperiod_entry_economics_v1/AG_C1_COMBO_FULL_O_D1A_actual_fill_2s/run-c1f3438f320d41bf9c568c709e0bbaac；来源运行：run-c1f3438f320d41bf9c568c709e0bbaac。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 10962 | count | accepted completed trades | count | known |
+| completed_subset_net_bps_sum | -2742.1736855441877 | bps | sum of per-trade entry-notional returns; unresolved inventory excluded | sum_trade_bps | known |
+| completed_subset_mean_net_bps | -0.25015268067361685 | bps | accepted completed trades | mean | known |
+| fullperiod_net_unit_cash | unknown | unit cash | unit quantity1, multiplier1; only defined if final inventory flat | sum_cash | unavailable |
+| pooled_prediction_IC | 0.2518038488320095 | correlation | common finite model/2s-label rows | pooled_rows | known |
+| pooled_prediction_RankIC | 0.2811234489076498 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
+
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory open; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AG F2_current aligned taker 2s
+
+评价：exp_20260930_d1a_taker_fullperiod_entry_economics_v1/AG_F2_current_D1A_actual_fill_2s/run-c1f3438f320d41bf9c568c709e0bbaac；来源运行：run-c1f3438f320d41bf9c568c709e0bbaac。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 10968 | count | accepted completed trades | count | known |
+| completed_subset_net_bps_sum | -3137.6476753987263 | bps | sum of per-trade entry-notional returns; unresolved inventory excluded | sum_trade_bps | known |
+| completed_subset_mean_net_bps | -0.2860729098649459 | bps | accepted completed trades | mean | known |
+| fullperiod_net_unit_cash | unknown | unit cash | unit quantity1, multiplier1; only defined if final inventory flat | sum_cash | unavailable |
+| pooled_prediction_IC | 0.24255184209306857 | correlation | common finite model/2s-label rows | pooled_rows | known |
+| pooled_prediction_RankIC | 0.2714385931639001 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
+
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory open; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AU B1 aligned taker 2s
+
+评价：exp_20260930_d1a_taker_fullperiod_entry_economics_v1/AU_B1_D1A_actual_fill_2s/run-c1f3438f320d41bf9c568c709e0bbaac；来源运行：run-c1f3438f320d41bf9c568c709e0bbaac。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 6145 | count | accepted completed trades | count | known |
+| completed_subset_net_bps_sum | -1169.9480161593335 | bps | sum of per-trade entry-notional returns; unresolved inventory excluded | sum_trade_bps | known |
+| completed_subset_mean_net_bps | -0.1903902385938704 | bps | accepted completed trades | mean | known |
+| fullperiod_net_unit_cash | -513.0084834000447 | unit cash | unit quantity1, multiplier1; only defined if final inventory flat | sum_cash | known |
+| pooled_prediction_IC | 0.1875829059907955 | correlation | common finite model/2s-label rows | pooled_rows | known |
+| pooled_prediction_RankIC | 0.2081814920739837 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
+
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory flat; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AU C1_COMBO_FULL_O aligned taker 2s
+
+评价：exp_20260930_d1a_taker_fullperiod_entry_economics_v1/AU_C1_COMBO_FULL_O_D1A_actual_fill_2s/run-c1f3438f320d41bf9c568c709e0bbaac；来源运行：run-c1f3438f320d41bf9c568c709e0bbaac。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 9 | count | accepted completed trades | count | known |
+| completed_subset_net_bps_sum | -822.3201707225426 | bps | sum of per-trade entry-notional returns; unresolved inventory excluded | sum_trade_bps | known |
+| completed_subset_mean_net_bps | -91.36890785806028 | bps | accepted completed trades | mean | known |
+| fullperiod_net_unit_cash | -380.4903628000015 | unit cash | unit quantity1, multiplier1; only defined if final inventory flat | sum_cash | known |
+| pooled_prediction_IC | 0.02617057337043451 | correlation | common finite model/2s-label rows | pooled_rows | known |
+| pooled_prediction_RankIC | 0.021258494475218877 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
+
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory flat; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AU F2_current aligned taker 2s
+
+评价：exp_20260930_d1a_taker_fullperiod_entry_economics_v1/AU_F2_current_D1A_actual_fill_2s/run-c1f3438f320d41bf9c568c709e0bbaac；来源运行：run-c1f3438f320d41bf9c568c709e0bbaac。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 6187 | count | accepted completed trades | count | known |
+| completed_subset_net_bps_sum | -1071.400095152392 | bps | sum of per-trade entry-notional returns; unresolved inventory excluded | sum_trade_bps | known |
+| completed_subset_mean_net_bps | -0.17316956443387618 | bps | accepted completed trades | mean | known |
+| fullperiod_net_unit_cash | -470.4406120000268 | unit cash | unit quantity1, multiplier1; only defined if final inventory flat | sum_cash | known |
+| pooled_prediction_IC | 0.19127927714545362 | correlation | common finite model/2s-label rows | pooled_rows | known |
+| pooled_prediction_RankIC | 0.21133264159933565 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
+
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory flat; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- maker_fill：missing_facts；maker order/fill facts unavailable
 - signal_bins：missing_facts；no registered source training-bin column
