@@ -1,6 +1,6 @@
 # 期货短周期研究当前结果
 
-发布版本：`f97c4dec35b3506c76454c1189575f6eb8bc78a469676c94612803da378181be`；指标快照时间：2026-10-02T22:08:08.771066+00:00。
+发布版本：`22bda0b6dc4acf4ba8ebf68b530f48d94688c1f1e1b8c9315e46659a86dda03b`；指标快照时间：2026-10-05T07:14:16.445995+00:00。
 
 [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/) · [研究来源索引](RESEARCH_INDEX.md)
 
@@ -281,7 +281,7 @@
 | pooled_prediction_IC | 0.24063612648847696 | correlation | common finite model/2s-label rows | pooled_rows | known |
 | pooled_prediction_RankIC | 0.2697839731757202 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
 
-限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory open; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -304,7 +304,7 @@
 | pooled_prediction_IC | 0.2518038488320095 | correlation | common finite model/2s-label rows | pooled_rows | known |
 | pooled_prediction_RankIC | 0.2811234489076498 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
 
-限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory open; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -327,7 +327,7 @@
 | pooled_prediction_IC | 0.24255184209306857 | correlation | common finite model/2s-label rows | pooled_rows | known |
 | pooled_prediction_RankIC | 0.2714385931639001 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
 
-限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory open; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -350,7 +350,7 @@
 | pooled_prediction_IC | 0.1875829059907955 | correlation | common finite model/2s-label rows | pooled_rows | known |
 | pooled_prediction_RankIC | 0.2081814920739837 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
 
-限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory flat; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -373,7 +373,7 @@
 | pooled_prediction_IC | 0.02617057337043451 | correlation | common finite model/2s-label rows | pooled_rows | known |
 | pooled_prediction_RankIC | 0.021258494475218877 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
 
-限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory flat; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -396,7 +396,7 @@
 | pooled_prediction_IC | 0.19127927714545362 | correlation | common finite model/2s-label rows | pooled_rows | known |
 | pooled_prediction_RankIC | 0.21133264159933565 | correlation | common finite model/2s-label rows | pooled_reranked_rows | known |
 
-限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Dynamic economics: completed trades only, exit-time attribution; final inventory flat; no inventory MTM.；Signal day/hour buckets follow the original UTC timestamp grouping. SHFE trading-date diagnostics are separately retained in the accepted report.
+限制：45 dates/179 sessions, 20260507-20260709; historical development38/newdates7; independent confirmation missing; complete decisions retained; completed subset distinct from unresolved final inventory；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable

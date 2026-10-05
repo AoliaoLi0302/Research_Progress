@@ -1,6 +1,6 @@
 # 研究来源索引
 
-发布版本：`f97c4dec35b3506c76454c1189575f6eb8bc78a469676c94612803da378181be`
+发布版本：`22bda0b6dc4acf4ba8ebf68b530f48d94688c1f1e1b8c9315e46659a86dda03b`
 
 [当前结果](RESEARCH_CURRENT.md) · [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/)
 
