@@ -1,6 +1,6 @@
 # 期货短周期研究当前结果
 
-发布版本：`22bda0b6dc4acf4ba8ebf68b530f48d94688c1f1e1b8c9315e46659a86dda03b`；指标快照时间：2026-10-05T07:14:16.445995+00:00。
+发布版本：`405cb84954e8ffe9c509052b259f9b5c3bbb29411e4218ff680e729073aa653a`；指标快照时间：2026-10-06T09:28:15.831598+00:00。
 
 [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/) · [研究来源索引](RESEARCH_INDEX.md)
 

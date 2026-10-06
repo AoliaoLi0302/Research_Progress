@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research result portal">
+  <title>Research portal</title>
+  <link rel="stylesheet" href="assets/portal.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <span class="eyebrow">Research results</span>
+      <h1 id="program-title">Research portal</h1>
+    </div>
+    <div class="release-meta" aria-live="polite">
+      <span id="release-id">Loading release…</span>
+      <span id="generated-at"></span>
+    </div>
+  </header>
+
+  <nav class="main-nav" aria-label="Primary">
+    <a href="./">报告库</a>
+    <a href="#overview" data-route="overview">Overview</a>
+    <a href="#signals" data-route="signals">Signals</a>
+    <a href="#economics" data-route="economics">Economics</a>
+    <a href="#maker" data-route="maker">Maker</a>
+    <a href="#status" data-route="status">Status</a>
+  </nav>
+
+  <main>
+    <section id="load-state" class="notice" role="status" aria-live="polite">Loading published catalog…</section>
+
+    <section id="filters" class="filters" hidden aria-label="Portal filters">
+      <div class="filter-group">
+        <label for="product-filter">Product</label>
+        <select id="product-filter" multiple size="3"></select>
+      </div>
+      <div class="filter-group">
+        <label for="track-filter">Research track</label>
+        <select id="track-filter" multiple size="3"></select>
+      </div>
+      <div class="filter-group filter-wide">
+        <label for="evaluation-filter">Evaluation / strategy / parameter</label>
+        <select id="evaluation-filter" multiple size="4"></select>
+      </div>
+      <div class="filter-group">
+        <label for="timezone-filter">Display timezone</label>
+        <select id="timezone-filter">
+          <option value="Asia/Shanghai">Asia/Shanghai</option>
+          <option value="UTC">UTC</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="fee-filter">Registered fee scenario</label>
+        <select id="fee-filter"><option value="">All registered scenarios</option></select>
+      </div>
+      <div class="filter-group">
+        <label for="start-date">Applied start (inclusive)</label>
+        <input id="start-date" type="date">
+      </div>
+      <div class="filter-group">
+        <label for="end-date">Applied end (exclusive)</label>
+        <input id="end-date" type="date">
+      </div>
+      <div class="filter-actions">
+        <button id="apply-filter" class="button primary" type="button">Apply aligned range</button>
+        <button id="clear-filter" class="button" type="button">Clear dates</button>
+        <button id="reset-filter" class="button" type="button">Reset</button>
+      </div>
+      <p id="filter-note" class="filter-note"></p>
+    </section>
+
+    <section id="app" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Published snapshot only.</span>
+    <span id="footer-contract"></span>
+  </footer>
+
+  <script src="assets/plotly.min.js"></script>
+  <script src="assets/portal.js"></script>
+</body>
+</html>
