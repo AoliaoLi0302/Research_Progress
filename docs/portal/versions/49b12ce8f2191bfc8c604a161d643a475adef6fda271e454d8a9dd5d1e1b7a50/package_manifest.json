@@ -1,0 +1,45 @@
+{
+  "release_id": "49b12ce8f2191bfc8c604a161d643a475adef6fda271e454d8a9dd5d1e1b7a50",
+  "identity": {
+    "metrics": "6ff268e2d600809c46787a752fa1416adb6a34920cf557be5513d6b0d87bcbdc",
+    "web": {
+      "analysis.html": "f343f7aef968ffe1a8acae6ac5952fb069e7c5ac422b005c462077a8befdf9a1",
+      "assets/library.css": "d1ed786d14919faabc92236164220fcdbfa7b7dabd943f09f254bde5fcbe8e84",
+      "assets/library.js": "d4e3e2f2f542636b999e431047c5b51fb2ac6982c3df7a8740afa8f11413f1f3",
+      "assets/portal.css": "2a743ed993120375f947411cb97cf7a99496e34981a699205624677277b1a191",
+      "assets/portal.js": "cd7f1cd3144920c592761b2894d2c771cd13ae7551f14bd80a4322fd9d2cafac",
+      "index.html": "8e3062020dc6a38b12483e94112f3ad591a3ecd1c6315dc9b9169ba5c8addf01"
+    },
+    "plotly": "9d1af0f627d3cd1bfdffca2c57c3593c83267cd2e3ca3b3f345bfb787363ea05",
+    "builder": "ca564c90f01ee2288f2233c8b7e568f6ddd77ebdbed47c2605159087487aa1ea",
+    "adapter": "0e45016c6fdc80701b5acf57afcd97a485e757f152fbf3a97339d392bcc3ce28",
+    "catalog_hash": "b3d37947a53cf70f3fff7d0454d0084bed970e542fb94b26a64dcdae1f33f00b",
+    "generated_at": "2026-10-13T14:52:27.607997+00:00",
+    "publication_renderer": "336994091c7e8324c2817761c24ba7fa14f1e5b82b9830ef95ed888d8a96e67d",
+    "publication_url": "https://aoliaoli0302.github.io/Research_Progress/portal/",
+    "weekly": {
+      "reports": [],
+      "files": {
+        "weekly/index.html": "6c0a35cc2163b73386f712480711806727fdd36bf143bb880d7d38e254af6209",
+        "weekly/index.json": "b06eed95b0a6cc16fe554f2f7bbcf12db9cb61520f4f746247130fbb8e5caafa"
+      },
+      "renderer": "54854127910574426a1ab128c18257ee58811da854b5762b62e0d89e23081f01"
+    }
+  },
+  "files": {
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "analysis.html": "f343f7aef968ffe1a8acae6ac5952fb069e7c5ac422b005c462077a8befdf9a1",
+    "assets/library.css": "d1ed786d14919faabc92236164220fcdbfa7b7dabd943f09f254bde5fcbe8e84",
+    "assets/library.js": "d4e3e2f2f542636b999e431047c5b51fb2ac6982c3df7a8740afa8f11413f1f3",
+    "assets/plotly.min.js": "a32e817bb121e9e89016ce4cee85ee3f1c66f6a6c95c4b53a5f488f77756d7a4",
+    "assets/portal.css": "2a743ed993120375f947411cb97cf7a99496e34981a699205624677277b1a191",
+    "assets/portal.js": "cd7f1cd3144920c592761b2894d2c771cd13ae7551f14bd80a4322fd9d2cafac",
+    "data/49b12ce8f2191bfc8c604a161d643a475adef6fda271e454d8a9dd5d1e1b7a50/catalog.json": "2f5794838249b5ea760ca18e894ad6801b59c81314e403f6a79f995d8c374e8b",
+    "index.html": "8e3062020dc6a38b12483e94112f3ad591a3ecd1c6315dc9b9169ba5c8addf01",
+    "release.json": "ebc2dd2ea7de7c0cc605bb30ad784a1c8af8c92ca985129346182dd8e2c8abbc",
+    "research/RESEARCH_CURRENT.md": "10dd11bdfc54181c28239567bb051a8fb78d066168de63537c1e206d0bca03c3",
+    "research/RESEARCH_INDEX.md": "f3a3b22d2c72527100ef42d653b4024af882c82e983c1e7db6e0841e4df0d214",
+    "weekly/index.html": "6c0a35cc2163b73386f712480711806727fdd36bf143bb880d7d38e254af6209",
+    "weekly/index.json": "b06eed95b0a6cc16fe554f2f7bbcf12db9cb61520f4f746247130fbb8e5caafa"
+  }
+}
