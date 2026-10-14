@@ -1,6 +1,6 @@
 # 期货短周期研究当前结果
 
-发布版本：`49b12ce8f2191bfc8c604a161d643a475adef6fda271e454d8a9dd5d1e1b7a50`；指标快照时间：2026-10-13T14:52:27.607997+00:00。
+发布版本：`7a2d69aeed5628e7b1fef819793b077cd9ebe777116226d1d540385c09314a8a`；指标快照时间：2026-10-14T06:34:33.966820+00:00。
 
 [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/) · [研究来源索引](RESEARCH_INDEX.md)
 
@@ -799,7 +799,7 @@
 | fee_bps_sum | 1659.745094847994 | bps | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | sum_trade_bps | known |
 | UNKNOWN_inventory | 0 | count | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | count | known |
 
-限制：45 previously viewed dates; independent confirmation missing; complete decisions retained; completed subset and UNKNOWN inventory reported separately；Structured execution details remain in the private source bound by contract_hash.；Dynamic economics: completed trades only, exit-time attribution; final inventory flat; no inventory MTM. BUY-matched parent subset is descriptive, not a long-only dynamic control.；Development38 and July7 are previously viewed samples. Independent confirmation blocked; no prediction/label facts projected and hourly IC/RankIC unavailable. Human research review pending.
+限制：45 previously viewed dates; independent confirmation missing; complete decisions retained; completed subset and UNKNOWN inventory reported separately；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
