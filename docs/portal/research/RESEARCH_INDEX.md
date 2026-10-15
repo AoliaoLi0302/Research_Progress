@@ -1,6 +1,6 @@
 # 研究来源索引
 
-发布版本：`b7de5bd7a260abcd838cda659dd8e10f427227e32c5c759b297605c0d081c71d`
+发布版本：`a5e90652d5ad4accbb87cd08c7ea190e4378237a48bbd64cd0c30b94a300f1a4`
 
 [当前结果](RESEARCH_CURRENT.md) · [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/)
 
@@ -8,8 +8,13 @@
 
 | 实验 | 来源运行 | 研究方向 | 评价 | 合同身份 |
 | --- | --- | --- | --- | --- |
+| exp_20261014_au_support_domain_alignment_v1 | run-59e38f0740e647da92791a6577008a02 | xau_dynamic_2s | au_G5_20261015_C1_AU_visible_L5 | 30490520e879bff65c298f168c6b47d1227c42fda159c62fa5d580fdc2815ea5 |
+| exp_20261014_au_support_domain_alignment_v1 | run-59e38f0740e647da92791a6577008a02 | xau_dynamic_2s | au_G5_20261015_C1_without_2bps_ablation | 30490520e879bff65c298f168c6b47d1227c42fda159c62fa5d580fdc2815ea5 |
+| exp_20261014_au_support_domain_alignment_v1 | run-59e38f0740e647da92791a6577008a02 | xau_dynamic_2s | au_G5_20261015_F2_current | 30490520e879bff65c298f168c6b47d1227c42fda159c62fa5d580fdc2815ea5 |
 | exp_20261014_au_support_domain_alignment_v1 | run-c712afe5ecff4c4dbf69a7380f5c5d89 | xau_dynamic_2s | au_support_domain_S2_5392c5c72b1c | f1cf3cd1d038b6acb556e625f31923ee9791afa46bdfd7e43d85066b27c7bfc7 |
 | exp_20261014_au_support_domain_alignment_v1 | run-22e6c5efc4ee472ebce19d63e12b9fb5 | xau_dynamic_2s | au_support_domain_S3_56dc4e008be5 | 9df5d2f97ba67dc12f7a66388e514307bb1b4b05bb44f2eea3d8331a1f929713 |
+| exp_20261014_au_support_domain_alignment_v1 | run-92651ae5c6a6431b8037491457c25ac6 | xau_dynamic_2s | au_support_domain_S4_d5a73cd6aaf3 | 409832efe3215b4fd9133c73ca86b3e84d92a2fc4b5869280bbe03310ac9433d |
+| exp_20261014_au_support_domain_alignment_v1 | run-4466e10d81bd4f5a92b5105386df460d | xau_dynamic_2s | au_support_domain_S5_fe8736593bdb | eed8ffeac55a5dd31f5cc5a4056b1847412bc99fb3c6ac0adcc2802d5226aaa8 |
 | exp_20261014_au_support_domain_alignment_v1 | run-1b90848ce0544fd387ab8f18c2b245ff | xau_dynamic_2s | au_support_domain_s1_8c668ebc2586 | dd098d916db218ea4850b6a8972c4b8912eebf2cb882516992f2934d79edf2b1 |
 | exp_20260929_d0_inventory_profit_gap_v1 | run-298cb2a311524a7099cffc2a5ee5d06c | xag_dynamic_2s | d0/XAG_B1 | 06d9dcf19f08f30074eb7e328f92e428d099329b1219b72ed218ba54585957ec |
 | exp_20260929_d0_inventory_profit_gap_v1 | run-298cb2a311524a7099cffc2a5ee5d06c | xag_dynamic_2s | d0/XAG_F2_current | b9fdfd3a56e0ac9ecffabf7d8babbcf1c0b56a3e53e0bebdb3f984f12e8b121f |
@@ -41,3 +46,4 @@
 | exp_20261014_xag_taker_deviation_relaxation_v1 | run-a0800789d0834bc39c7b472f174a8ce3 | xag_dynamic_2s | exp_20261014_xag_taker_deviation_relaxation_v1/A85/run-a0800789d0834bc39c7b472f174a8ce3 | 9776cc8bfe3cfc5ae9a82333de4dc1dbe3f26243740cc86e79fc8a2ce95df809 |
 | exp_20261014_xag_taker_deviation_relaxation_v1 | run-a0800789d0834bc39c7b472f174a8ce3 | xag_dynamic_2s | exp_20261014_xag_taker_deviation_relaxation_v1/L/run-a0800789d0834bc39c7b472f174a8ce3 | 84b7c457e2b52598f0d3b052352000f3eecd0099cd63c3c6f6b334b48537154f |
 | exp_20261014_xag_taker_signal_threshold_relaxation_v1 | run-8d5f2189376c40908fe62839af8de959 | xag_dynamic_2s | exp_20261014_xag_taker_signal_threshold_relaxation_v1/AG_F2_B99_fixed_H5s/run-8d5f2189376c40908fe62839af8de959 | f8e31d0700f45b65ba6046907094853e9c0f4d5258b3dba636a6d8c24e723c7f |
+| exp_20261015_taker_p1_entry_attribution_v1 | run-19b13027b7934b37b8cbd564bd04d0cb | xag_dynamic_2s | exp_20261015_taker_p1_entry_attribution_v1/P1/run-19b13027b7934b37b8cbd564bd04d0cb | 9025f82d1bcabd1715f7cb6c12a6b158e8137eba81a36d92a80afbb65a88bfff |

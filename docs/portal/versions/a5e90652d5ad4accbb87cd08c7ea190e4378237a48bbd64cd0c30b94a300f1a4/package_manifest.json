@@ -1,0 +1,74 @@
+{
+  "release_id": "a5e90652d5ad4accbb87cd08c7ea190e4378237a48bbd64cd0c30b94a300f1a4",
+  "identity": {
+    "metrics": "5563113058d3bbdfd69e6899961de640b1ef88c3c1debb4fbda57dd8d8c85a6e",
+    "web": {
+      "analysis.html": "f343f7aef968ffe1a8acae6ac5952fb069e7c5ac422b005c462077a8befdf9a1",
+      "assets/library.css": "d1ed786d14919faabc92236164220fcdbfa7b7dabd943f09f254bde5fcbe8e84",
+      "assets/library.js": "d4e3e2f2f542636b999e431047c5b51fb2ac6982c3df7a8740afa8f11413f1f3",
+      "assets/portal.css": "2a743ed993120375f947411cb97cf7a99496e34981a699205624677277b1a191",
+      "assets/portal.js": "cd7f1cd3144920c592761b2894d2c771cd13ae7551f14bd80a4322fd9d2cafac",
+      "index.html": "8e3062020dc6a38b12483e94112f3ad591a3ecd1c6315dc9b9169ba5c8addf01"
+    },
+    "plotly": "9d1af0f627d3cd1bfdffca2c57c3593c83267cd2e3ca3b3f345bfb787363ea05",
+    "builder": "89a0aa4ef0deae144e5367d914788cc9b17f7a0676367708e72df4bf2b003223",
+    "adapter": "daa290670f0881072c1979011e122c2077c6da573f6ff468823435b8f6598c25",
+    "catalog_hash": "94aa3ff6e8f615a85cba9492c98ae2901e5800b6a75880b3b4025f10f1d4f5a3",
+    "generated_at": "2026-10-15T10:26:32.614242+00:00",
+    "publication_renderer": "336994091c7e8324c2817761c24ba7fa14f1e5b82b9830ef95ed888d8a96e67d",
+    "publication_url": "https://aoliaoli0302.github.io/Research_Progress/portal/",
+    "weekly": {
+      "reports": [
+        {
+          "title": "研究周报：2026年10月1日—10月12日",
+          "period_start": "2026-10-01",
+          "period_end": "2026-10-12",
+          "data_cutoff": "2026-10-12T13:52:50+08:00",
+          "version": "v2-review",
+          "summary": "Maker撤单减少负面暴露但未形成账户盈利证据；AG因子组合有预测增量但成本后仍负，AU外推受覆盖限制。",
+          "status": "approved",
+          "content_sha256": "7450bc538d4eb3abec4464f792a0b9b343a285ef111c8c6584afc501cebd27c3",
+          "files": {
+            "report.html": "f3439fcce46ac1be196982d325088b38cf7c5d3ccf7224ba97b7226ca7b46f10",
+            "report.pdf": "2543c548d0d0396e65e112a77f342a634cc61a6a9ca2d0983d2db602c55bd572",
+            "cjk.ttf": "ee38813ea00c3e32add4268fff7fff9e39417b4913cb13be2415164a47807cc2"
+          },
+          "pdf": "weekly/20261001_20261012/v2-review/report.pdf",
+          "web": "weekly/20261001_20261012/v2-review/report.html",
+          "approval_receipt_sha256": "50d051c990a4047cef21268d37731c684906716a90ed89022319276e218ffc82",
+          "correction": "",
+          "supersedes": null
+        }
+      ],
+      "files": {
+        "weekly/20261001_20261012/v2-review/report.html": "f3439fcce46ac1be196982d325088b38cf7c5d3ccf7224ba97b7226ca7b46f10",
+        "weekly/20261001_20261012/v2-review/report.pdf": "2543c548d0d0396e65e112a77f342a634cc61a6a9ca2d0983d2db602c55bd572",
+        "weekly/20261001_20261012/v2-review/cjk.ttf": "ee38813ea00c3e32add4268fff7fff9e39417b4913cb13be2415164a47807cc2",
+        "weekly/20261001_20261012/v2-review/metadata.json": "39fea267619941fb9286de546537f338a65267c882a9fbd62ecc331c297bf362",
+        "weekly/index.html": "51e0259582b70c3cb99156e6048ea27a81d6dfb7363dbd57ccdf626a396a67d6",
+        "weekly/index.json": "9c4858d18a842488e32334c4aeef4395eea09ddc56f5862c442e18cf7aaa3257"
+      },
+      "renderer": "5cb5239e70b56ded6028a3ba130ab5d1bc315014ffa519ca57a0cd680ea9cf87"
+    }
+  },
+  "files": {
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "analysis.html": "f343f7aef968ffe1a8acae6ac5952fb069e7c5ac422b005c462077a8befdf9a1",
+    "assets/library.css": "d1ed786d14919faabc92236164220fcdbfa7b7dabd943f09f254bde5fcbe8e84",
+    "assets/library.js": "d4e3e2f2f542636b999e431047c5b51fb2ac6982c3df7a8740afa8f11413f1f3",
+    "assets/plotly.min.js": "a32e817bb121e9e89016ce4cee85ee3f1c66f6a6c95c4b53a5f488f77756d7a4",
+    "assets/portal.css": "2a743ed993120375f947411cb97cf7a99496e34981a699205624677277b1a191",
+    "assets/portal.js": "cd7f1cd3144920c592761b2894d2c771cd13ae7551f14bd80a4322fd9d2cafac",
+    "data/a5e90652d5ad4accbb87cd08c7ea190e4378237a48bbd64cd0c30b94a300f1a4/catalog.json": "4268fd920bfa4b66e1f4d0ae6456538bdb89d4a84a4df23c81bcc069815c0e6f",
+    "index.html": "8e3062020dc6a38b12483e94112f3ad591a3ecd1c6315dc9b9169ba5c8addf01",
+    "release.json": "b8b300799fd0a0058045d786b50f9847e22ce8155ff9e71a968257484b1ab9c7",
+    "research/RESEARCH_CURRENT.md": "102da5fb214612684b46ef3390ea09a4c0292459a27d73780bf3465571edd7d4",
+    "research/RESEARCH_INDEX.md": "d9ac062cfb039c5259c6ae9844e47cb220077bb6b495999c298a9130fb45920e",
+    "weekly/20261001_20261012/v2-review/cjk.ttf": "ee38813ea00c3e32add4268fff7fff9e39417b4913cb13be2415164a47807cc2",
+    "weekly/20261001_20261012/v2-review/metadata.json": "39fea267619941fb9286de546537f338a65267c882a9fbd62ecc331c297bf362",
+    "weekly/20261001_20261012/v2-review/report.html": "f3439fcce46ac1be196982d325088b38cf7c5d3ccf7224ba97b7226ca7b46f10",
+    "weekly/20261001_20261012/v2-review/report.pdf": "2543c548d0d0396e65e112a77f342a634cc61a6a9ca2d0983d2db602c55bd572",
+    "weekly/index.html": "51e0259582b70c3cb99156e6048ea27a81d6dfb7363dbd57ccdf626a396a67d6",
+    "weekly/index.json": "9c4858d18a842488e32334c4aeef4395eea09ddc56f5862c442e18cf7aaa3257"
+  }
+}

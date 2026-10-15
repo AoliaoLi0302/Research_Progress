@@ -1,6 +1,6 @@
 # 期货短周期研究当前结果
 
-发布版本：`b7de5bd7a260abcd838cda659dd8e10f427227e32c5c759b297605c0d081c71d`；指标快照时间：2026-10-15T06:17:10.865097+00:00。
+发布版本：`a5e90652d5ad4accbb87cd08c7ea190e4378237a48bbd64cd0c30b94a300f1a4`；指标快照时间：2026-10-15T10:26:32.614242+00:00。
 
 [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/) · [研究来源索引](RESEARCH_INDEX.md)
 
@@ -10,8 +10,13 @@
 
 | 结果 | 角色 | 日期范围（实际日期数） | 技术状态 | 人工复核 |
 | --- | --- | --- | --- | --- |
+| AU 可见五档组合：已归档，未替换F2基线 | archive | 20260507–20260709（45） | passed | approved |
+| AU 去2bps消融：已归档，未替换F2基线 | archive | 20260507–20260709（45） | passed | approved |
+| AU 当前研究基线：F2（已确认工作对照） | control | 20260507–20260709（45） | passed | approved |
 | AU阶段2：五档合同三日验收通过，模型增量尚未验证 | candidate | 20260507–20260709（3） | passed | pending |
 | AU阶段3：支持域恢复，五档小幅预测增量待动态验证 | candidate | 20260507–20260709（45） | passed | pending |
+| AU阶段4：连续动态执行与经济性 | candidate | 20260507–20260709（45） | passed | pending |
+| AU阶段5：证据结项，独立确认待新样本 | archive | 20260428–20260709（49） | passed | pending |
 | AU阶段1支持域审计：尺度与历史压缩C1，额外掩码损失为零 | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
 | XAG_B1 | control | 20260507–20260630（38） | passed | pending |
 | XAG_F2_current | current_reference | 20260507–20260630（38） | passed | pending |
@@ -43,6 +48,97 @@
 | AG/XAG BUY A85 dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
 | AG/XAG BUY L dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
 | AG F2 BUY Q99 fixed H5s dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| Taker P1入场归因：扩量未增现金，独立H5归因仍缺对照 | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+
+## AU 可见五档组合：已归档，未替换F2基线
+
+评价：au_G5_20261015_C1_AU_visible_L5；来源运行：run-59e38f0740e647da92791a6577008a02。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 6273 | trades | 6273 completed trades; full45 dates and terminal flat | inherited_frozen_S4_count | known |
+| mean_net_bps | -0.18539451872093096 | bps | 6273 completed trades; full45 dates and terminal flat | inherited_frozen_S4_mean | known |
+| net_bps_sum | -1162.9798159364 | bps | 6273 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| gross_mid_bps_sum | 6542.073340265267 | bps | 6273 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| crossing_bps_sum | 177.4017697768739 | bps | 6273 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| fee_bps_sum | 7527.651386424794 | bps | 6273 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| win_rate | 0.3983739837398374 | ratio | 6273 completed trades; full45 dates and terminal flat | inherited_frozen_S4_ratio | known |
+| terminal_unknown_inventory | 0 | positions | full45-date continuous path terminal | count | known |
+| confirmed_independent_dates | 0 | dates | 49 registered same-source input dates inspected in S5 | count | known |
+
+限制：AU当前研究基线为F2，仅作研究工作对照，非生产或盈利策略。；F2均笔Net -0.1732bps；五档组合-0.1854bps；消融-0.1946bps，全部为负。；独立确认尚未完成；本次登记同源范围没有已确认独立日期，其他数据情况未知。；五档与消融归档，不替换F2。74列F2＋仅五档模型及AU BUY/H5筛选未测试。；本视图只公开已验收聚合摘要；不生成新小时IC或动态收益序列。；原阶段报告保留当时待复核的历史快照；本视图为用户确认后的状态。；20260507–20260709共45日，全部已查看；49个同源输入日期均已训练或评价。G5结项及F2工作对照选择已获用户确认，本视图不代表新回测。；G5已接受结项。未授权新研究、主参考晋级或真实交易。；evaluation has no readable pinned parquet facts
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AU 去2bps消融：已归档，未替换F2基线
+
+评价：au_G5_20261015_C1_without_2bps_ablation；来源运行：run-59e38f0740e647da92791a6577008a02。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 6251 | trades | 6251 completed trades; full45 dates and terminal flat | inherited_frozen_S4_count | known |
+| mean_net_bps | -0.19456015340370056 | bps | 6251 completed trades; full45 dates and terminal flat | inherited_frozen_S4_mean | known |
+| net_bps_sum | -1216.1955189265323 | bps | 6251 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| gross_mid_bps_sum | 6460.104465696456 | bps | 6251 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| crossing_bps_sum | 175.04745553948823 | bps | 6251 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| fee_bps_sum | 7501.2525290835 | bps | 6251 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| win_rate | 0.3940169572868341 | ratio | 6251 completed trades; full45 dates and terminal flat | inherited_frozen_S4_ratio | known |
+| terminal_unknown_inventory | 0 | positions | full45-date continuous path terminal | count | known |
+| confirmed_independent_dates | 0 | dates | 49 registered same-source input dates inspected in S5 | count | known |
+
+限制：AU当前研究基线为F2，仅作研究工作对照，非生产或盈利策略。；F2均笔Net -0.1732bps；五档组合-0.1854bps；消融-0.1946bps，全部为负。；独立确认尚未完成；本次登记同源范围没有已确认独立日期，其他数据情况未知。；五档与消融归档，不替换F2。74列F2＋仅五档模型及AU BUY/H5筛选未测试。；本视图只公开已验收聚合摘要；不生成新小时IC或动态收益序列。；原阶段报告保留当时待复核的历史快照；本视图为用户确认后的状态。；20260507–20260709共45日，全部已查看；49个同源输入日期均已训练或评价。G5结项及F2工作对照选择已获用户确认，本视图不代表新回测。；G5已接受结项。未授权新研究、主参考晋级或真实交易。；evaluation has no readable pinned parquet facts
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AU 当前研究基线：F2（已确认工作对照）
+
+评价：au_G5_20261015_F2_current；来源运行：run-59e38f0740e647da92791a6577008a02。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 6187 | trades | 6187 completed trades; full45 dates and terminal flat | inherited_frozen_S4_count | known |
+| mean_net_bps | -0.17316956443387618 | bps | 6187 completed trades; full45 dates and terminal flat | inherited_frozen_S4_mean | known |
+| net_bps_sum | -1071.400095152392 | bps | 6187 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| gross_mid_bps_sum | 6529.856683429207 | bps | 6187 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| crossing_bps_sum | 176.8441225182528 | bps | 6187 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| fee_bps_sum | 7424.412656063347 | bps | 6187 completed trades; full45 dates and terminal flat | inherited_frozen_S4_sum | known |
+| win_rate | 0.387263617262001 | ratio | 6187 completed trades; full45 dates and terminal flat | inherited_frozen_S4_ratio | known |
+| terminal_unknown_inventory | 0 | positions | full45-date continuous path terminal | count | known |
+| confirmed_independent_dates | 0 | dates | 49 registered same-source input dates inspected in S5 | count | known |
+
+限制：AU当前研究基线为F2，仅作研究工作对照，非生产或盈利策略。；F2均笔Net -0.1732bps；五档组合-0.1854bps；消融-0.1946bps，全部为负。；独立确认尚未完成；本次登记同源范围没有已确认独立日期，其他数据情况未知。；五档与消融归档，不替换F2。74列F2＋仅五档模型及AU BUY/H5筛选未测试。；本视图只公开已验收聚合摘要；不生成新小时IC或动态收益序列。；原阶段报告保留当时待复核的历史快照；本视图为用户确认后的状态。；20260507–20260709共45日，全部已查看；49个同源输入日期均已训练或评价。G5结项及F2工作对照选择已获用户确认，本视图不代表新回测。；G5已接受结项。未授权新研究、主参考晋级或真实交易。；evaluation has no readable pinned parquet facts
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
 
 ## AU阶段2：五档合同三日验收通过，模型增量尚未验证
 
@@ -72,7 +168,7 @@
 | prediction_IC_increment | unknown | not_evaluated | No new candidate fits or strategy replay in S2 | unavailable | unavailable |
 | dynamic_net_increment | unknown | not_evaluated | No new candidate fits or strategy replay in S2 | unavailable | unavailable |
 
-限制：Three dates only; full49 source bytes/feature quality and full45 train/q995 gates pending；No new fit/prediction/replay; IC/net null, not zero；Historical tick chain and receive clock limitations remain; no independent dates；G1 approved S2 only; G2 and external report publication pending；20260507/20260603/20260709三日特征canary。两个候选各输入有效91423行，四模型掩码逐行一致。不是新模型预测或动态策略结果；49源日期仅为下一阶段元数据盘点。；Reuse completed identities. S3 must have explicit G2 authorization and new pinned implementation/config; retry export alone if publication fails.；Structured inputs details remain in the private source bound by contract_hash.
+限制：Three dates only; full49 source bytes/feature quality and full45 train/q995 gates pending；No new fit/prediction/replay; IC/net null, not zero；Historical tick chain and receive clock limitations remain; no independent dates；G1 approved S2 only; G2 and external report publication pending；20260507/20260603/20260709三日特征canary。两个候选各输入有效91423行，四模型掩码逐行一致。不是新模型预测或动态策略结果；49源日期仅为下一阶段元数据盘点。；Reuse completed identities. S3 must have explicit G2 authorization and new pinned implementation/config; retry export alone if publication fails.；evaluation has no readable pinned parquet facts；Structured inputs details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -226,7 +322,117 @@
 | combined45_C1_without_2bps_ablation__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.000669420419833504 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
 | new_dynamic_net_bps | unknown | bps | No S3 strategy replay | unavailable | unavailable |
 
-限制：Small predictive effect; q995 fixed2s response is not dynamic trades or PnL；All dates previously used; no independent confirmation；Receive clock and historical tick identity limitations remain；Original computation process exit receipt unknown; successful separately registered read-only acceptance does not rewrite it；S4/external publication not authorized；45个已用OOS日期（38开发+7七月探索），49训练/输入日期；四模型各1528036有限预测、1527628同池可评价。无新策略或独立确认。原计算退出回执缺失，当前run为只读恢复验收及报告成功。；Reuse all completed models/features/predictions. G3 explicit approval required for new dynamic work; export failures never trigger research recomputation.；could not read pinned parquet for asset au_S3_models_predictions_56dc4e008be5@6c7bbc91f7a43f5cd7e45ac7e5f51bd2e882bc36e2892c8d02bd43fbb1fa7fe1: MemoryError；Structured inputs details remain in the private source bound by contract_hash.
+限制：Small predictive effect; q995 fixed2s response is not dynamic trades or PnL；All dates previously used; no independent confirmation；Receive clock and historical tick identity limitations remain；Original computation process exit receipt unknown; successful separately registered read-only acceptance does not rewrite it；S4/external publication not authorized；45个已用OOS日期（38开发+7七月探索），49训练/输入日期；四模型各1528036有限预测、1527628同池可评价。无新策略或独立确认。原计算退出回执缺失，当前run为只读恢复验收及报告成功。；Reuse all completed models/features/predictions. G3 explicit approval required for new dynamic work; export failures never trigger research recomputation.；evaluation has no readable pinned parquet facts；Structured inputs details remain in the private source bound by contract_hash.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AU阶段4：连续动态执行与经济性
+
+评价：au_support_domain_S4_d5a73cd6aaf3；来源运行：run-92651ae5c6a6431b8037491457c25ac6。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| B1_completed_trades | 6145 | trades | 6145 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| B1_mean_net_bps | -0.1903902385938704 | bps | 6145 completed trades on full45 continuous path; flat terminal | mean | known |
+| B1_win_rate | 0.38991049633848657 | ratio | 6145 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| B1_gross_mid_bps_sum | 6380.44286857292 | bps | 6145 completed trades on full45 continuous path; flat terminal | sum | known |
+| B1_crossing_bps_sum | 176.3713135084322 | bps | 6145 completed trades on full45 continuous path; flat terminal | sum | known |
+| B1_fee_bps_sum | 7374.01957122382 | bps | 6145 completed trades on full45 continuous path; flat terminal | sum | known |
+| B1_net_bps_sum | -1169.9480161593335 | bps | 6145 completed trades on full45 continuous path; flat terminal | sum | known |
+| B1_net_cash_sum | -513.0084834000447 | price_currency_units | 6145 completed trades on full45 continuous path; flat terminal | sum | known |
+| B1_max_drawdown_bps | -1335.0209066936445 | bps | 6145 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| B1_holding_seconds_mean | 108.59352318958503 | seconds | 6145 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| B1_holding_seconds_max | 196248.486 | seconds | 6145 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| B1_net_bps_min | -239.23903056982184 | bps | 6145 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| B1_net_bps_max | 118.8456502862891 | bps | 6145 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| B1_fullperiod_unit_cash_net | -513.0084834001746 | price_currency_units | 1 unit quantity, multiplier1, all45 dates and terminal flat | net_cash_sum | known |
+| F2_current_completed_trades | 6187 | trades | 6187 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| F2_current_mean_net_bps | -0.17316956443387618 | bps | 6187 completed trades on full45 continuous path; flat terminal | mean | known |
+| F2_current_win_rate | 0.387263617262001 | ratio | 6187 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| F2_current_gross_mid_bps_sum | 6529.856683429207 | bps | 6187 completed trades on full45 continuous path; flat terminal | sum | known |
+| F2_current_crossing_bps_sum | 176.8441225182528 | bps | 6187 completed trades on full45 continuous path; flat terminal | sum | known |
+| F2_current_fee_bps_sum | 7424.412656063347 | bps | 6187 completed trades on full45 continuous path; flat terminal | sum | known |
+| F2_current_net_bps_sum | -1071.400095152392 | bps | 6187 completed trades on full45 continuous path; flat terminal | sum | known |
+| F2_current_net_cash_sum | -470.4406120000268 | price_currency_units | 6187 completed trades on full45 continuous path; flat terminal | sum | known |
+| F2_current_max_drawdown_bps | -1343.2920178415436 | bps | 6187 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| F2_current_holding_seconds_mean | 106.63892532729916 | seconds | 6187 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| F2_current_holding_seconds_max | 196226.518 | seconds | 6187 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| F2_current_net_bps_min | -239.23903056982184 | bps | 6187 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| F2_current_net_bps_max | 118.8456502862891 | bps | 6187 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| F2_current_fullperiod_unit_cash_net | -470.4406120001654 | price_currency_units | 1 unit quantity, multiplier1, all45 dates and terminal flat | net_cash_sum | known |
+| C1_without_2bps_ablation_completed_trades | 6251 | trades | 6251 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_without_2bps_ablation_mean_net_bps | -0.19456015340370056 | bps | 6251 completed trades on full45 continuous path; flat terminal | mean | known |
+| C1_without_2bps_ablation_win_rate | 0.3940169572868341 | ratio | 6251 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_without_2bps_ablation_gross_mid_bps_sum | 6460.104465696456 | bps | 6251 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_without_2bps_ablation_crossing_bps_sum | 175.04745553948823 | bps | 6251 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_without_2bps_ablation_fee_bps_sum | 7501.2525290835 | bps | 6251 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_without_2bps_ablation_net_bps_sum | -1216.1955189265323 | bps | 6251 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_without_2bps_ablation_net_cash_sum | -531.1041848000455 | price_currency_units | 6251 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_without_2bps_ablation_max_drawdown_bps | -1508.6335128538308 | bps | 6251 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_without_2bps_ablation_holding_seconds_mean | 101.72991633338667 | seconds | 6251 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_without_2bps_ablation_holding_seconds_max | 196226.518 | seconds | 6251 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_without_2bps_ablation_net_bps_min | -239.23903056982184 | bps | 6251 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_without_2bps_ablation_net_bps_max | 118.8456502862891 | bps | 6251 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_without_2bps_ablation_fullperiod_unit_cash_net | -531.1041848001305 | price_currency_units | 1 unit quantity, multiplier1, all45 dates and terminal flat | net_cash_sum | known |
+| C1_AU_visible_L5_completed_trades | 6273 | trades | 6273 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_AU_visible_L5_mean_net_bps | -0.18539451872093096 | bps | 6273 completed trades on full45 continuous path; flat terminal | mean | known |
+| C1_AU_visible_L5_win_rate | 0.3983739837398374 | ratio | 6273 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_AU_visible_L5_gross_mid_bps_sum | 6542.073340265267 | bps | 6273 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_AU_visible_L5_crossing_bps_sum | 177.4017697768739 | bps | 6273 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_AU_visible_L5_fee_bps_sum | 7527.651386424794 | bps | 6273 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_AU_visible_L5_net_bps_sum | -1162.9798159364 | bps | 6273 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_AU_visible_L5_net_cash_sum | -506.7009748000134 | price_currency_units | 6273 completed trades on full45 continuous path; flat terminal | sum | known |
+| C1_AU_visible_L5_max_drawdown_bps | -1384.5827463035841 | bps | 6273 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_AU_visible_L5_holding_seconds_mean | 98.16330352303522 | seconds | 6273 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_AU_visible_L5_holding_seconds_max | 196226.518 | seconds | 6273 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_AU_visible_L5_net_bps_min | -239.23903056982184 | bps | 6273 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_AU_visible_L5_net_bps_max | 105.06903052966655 | bps | 6273 completed trades on full45 continuous path; flat terminal | descriptive | known |
+| C1_AU_visible_L5_fullperiod_unit_cash_net | -506.70097480003597 | price_currency_units | 1 unit quantity, multiplier1, all45 dates and terminal flat | net_cash_sum | known |
+
+限制：No independent dates; all45 previously used；Unit-quantity cash and sum trade bps are not compounded account equity；Physical receive latency and complete historical tick identity unknown；Original0915 bridge not certified; inherited AU evidence assessed within this contract；Research review and main-reference selection pending; no automatic S5/external publication；原45个已使用日期；两个新候选90分区连续路径和6个checkpoint恢复验证；B1/F2账本身份复用。完整决策、实际成交费用、期末库存与完成子集分开，无独立确认。；Reuse completed ledger/checkpoint identities. Only G4 user authorization permits next stage; output publication failures never trigger replay.；evaluation has no readable pinned parquet facts；Structured inputs details remain in the private source bound by contract_hash.；Structured execution details remain in the private source bound by contract_hash.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AU阶段5：证据结项，独立确认待新样本
+
+评价：au_support_domain_S5_fe8736593bdb；来源运行：run-4466e10d81bd4f5a92b5105386df460d。
+
+实际日期：20260428, 20260429, 20260430, 20260506, 20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| registered_same_source_dates | 49 | dates | registered AU model-input dates | count | known |
+| used_evaluation_dates | 45 | dates | all viewed AU evaluation dates | count | known |
+| training_only_dates | 4 | dates | input dates outside evaluation | count | known |
+| confirmed_independent_dates | 0 | dates | within inspected registered same-source metadata | count | known |
+| B1_completed_trades | 6145 | trades | 6145 completed trades; full45 dates and terminal flat | inherited_S4_count | known |
+| B1_mean_net_bps | -0.1903902385938704 | bps | 6145 completed trades; full45 dates and terminal flat | inherited_S4_mean | known |
+| F2_current_completed_trades | 6187 | trades | 6187 completed trades; full45 dates and terminal flat | inherited_S4_count | known |
+| F2_current_mean_net_bps | -0.17316956443387618 | bps | 6187 completed trades; full45 dates and terminal flat | inherited_S4_mean | known |
+| C1_without_2bps_ablation_completed_trades | 6251 | trades | 6251 completed trades; full45 dates and terminal flat | inherited_S4_count | known |
+| C1_without_2bps_ablation_mean_net_bps | -0.19456015340370056 | bps | 6251 completed trades; full45 dates and terminal flat | inherited_S4_mean | known |
+| C1_AU_visible_L5_completed_trades | 6273 | trades | 6273 completed trades; full45 dates and terminal flat | inherited_S4_count | known |
+| C1_AU_visible_L5_mean_net_bps | -0.18539451872093096 | bps | 6273 completed trades; full45 dates and terminal flat | inherited_S4_mean | known |
+
+限制：No independent confirmation; readiness blocked；F2 is a negative-return research control, not a promoted strategy；No new predictive/dynamic computation；G4 choice accepted; G5 final review pending；Other date availability and use unknown; no raw scan；49个已登记同源日期：45日已评价，其余4日已训练；未发现合格独立日期，不代表全盘不存在数据。S4指标原样继承，本次仅元数据与报告。；Read preserved evidence; new data or model/filter/confirmation execution needs a separately approved exact plan.；evaluation has no readable pinned parquet facts；Structured inputs details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -1024,7 +1230,7 @@
 | HOLD_extra_cancel_value_bps | 1.5072532840397395 | bp | actual HOLD incremental fill notional; frozen mixed clocks | pooled_from_native_facts_not_hourly_average | known |
 | roundtrip_net_bps | unknown | bp | no actual Maker exit; unavailable | pooled_from_native_facts_not_hourly_average | unavailable |
 
-限制：not independent holdout；saved state inference does not re-prove transition semantics；Maker mixed clocks not deployment-equivalent；fullperiod HOLD missing；full38 STATE/retention/independent acceptance gaps retained；Four discovery windows on two used dates; full38 old three-arm reference separate; target through20260930 unconfirmed；No new date inference/replay or D2 authorized; see fullperiod confirmation plan
+限制：not independent holdout；saved state inference does not re-prove transition semantics；Maker mixed clocks not deployment-equivalent；fullperiod HOLD missing；full38 STATE/retention/independent acceptance gaps retained；Four discovery windows on two used dates; full38 old three-arm reference separate; target through20260930 unconfirmed；No new date inference/replay or D2 authorized; see fullperiod confirmation plan；evaluation has no readable pinned parquet facts
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -1065,7 +1271,7 @@
 | b1/prediction_bps/IC | 0.23456426090794366 | correlation | common finite event prediction/label pairs | pooled_from_native_facts_not_hourly_average | known |
 | b1/prediction_bps/RankIC | 0.26180295113312385 | correlation | common finite event prediction/label pairs | pooled_from_native_facts_not_hourly_average | known |
 
-限制：not independent holdout；saved state inference does not re-prove transition semantics；Maker mixed clocks not deployment-equivalent；fullperiod HOLD missing；full38 STATE/retention/independent acceptance gaps retained；Four discovery windows on two used dates; full38 old three-arm reference separate; target through20260930 unconfirmed；No new date inference/replay or D2 authorized; see fullperiod confirmation plan
+限制：not independent holdout；saved state inference does not re-prove transition semantics；Maker mixed clocks not deployment-equivalent；fullperiod HOLD missing；full38 STATE/retention/independent acceptance gaps retained；Four discovery windows on two used dates; full38 old three-arm reference separate; target through20260930 unconfirmed；No new date inference/replay or D2 authorized; see fullperiod confirmation plan；evaluation has no readable pinned parquet facts
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -1090,7 +1296,7 @@
 | inventoried_sessions | 410 | count | expected_sessions | count | known |
 | strategy_net_bps | unknown | bps | not_executed | count | unavailable |
 
-限制：时钟诊断不等于model/order replay验收；全期HOLD与新入场比较未执行；UNKNOWN未补零；人工研究复核pending；38日1230精确分段来源核验；1个15分钟时钟前缀；103日410会话仅依赖盘点，未全期回放
+限制：时钟诊断不等于model/order replay验收；全期HOLD与新入场比较未执行；UNKNOWN未补零；人工研究复核pending；38日1230精确分段来源核验；1个15分钟时钟前缀；103日410会话仅依赖盘点，未全期回放；evaluation has no readable pinned parquet facts
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -1144,7 +1350,7 @@
 | fullperiod_net_unit_cash | 0.47937020000026953 | unit cash | completed trades; fullperiod cash only if flat, no inventory MTM | sum_cash | known |
 | UNKNOWN_inventory | 0 | count | completed trades; fullperiod cash only if flat, no inventory MTM | count | known |
 
-限制：45 viewed dates; independent confirmation missing; complete decisions retained; inventory disclosed separately；Structured execution details remain in the private source bound by contract_hash.；Completed trades only, final inventory flat; no inventory MTM. Sum of per-trade bps is not an account return. Native unit cash is separate.；All 45 dates were previously viewed; independent confirmation missing; multiple candidates are reported without claiming multiplicity-adjusted inference. Research review pending.
+限制：45 viewed dates; independent confirmation missing; complete decisions retained; inventory disclosed separately；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -1169,7 +1375,7 @@
 | fullperiod_net_unit_cash | 3.819104200000145 | unit cash | completed trades; fullperiod cash only if flat, no inventory MTM | sum_cash | known |
 | UNKNOWN_inventory | 0 | count | completed trades; fullperiod cash only if flat, no inventory MTM | count | known |
 
-限制：45 viewed dates; independent confirmation missing; complete decisions retained; inventory disclosed separately；Structured execution details remain in the private source bound by contract_hash.；Completed trades only, final inventory flat; no inventory MTM. Sum of per-trade bps is not an account return. Native unit cash is separate.；All 45 dates were previously viewed; independent confirmation missing; multiple candidates are reported without claiming multiplicity-adjusted inference. Research review pending.
+限制：45 viewed dates; independent confirmation missing; complete decisions retained; inventory disclosed separately；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -1194,7 +1400,7 @@
 | fullperiod_net_unit_cash | -12.082650999999785 | unit cash | completed trades; fullperiod cash only if flat, no inventory MTM | sum_cash | known |
 | UNKNOWN_inventory | 0 | count | completed trades; fullperiod cash only if flat, no inventory MTM | count | known |
 
-限制：45 viewed dates; independent confirmation missing; complete decisions retained; inventory disclosed separately；Structured execution details remain in the private source bound by contract_hash.；Completed trades only, final inventory flat; no inventory MTM. Sum of per-trade bps is not an account return. Native unit cash is separate.；All 45 dates were previously viewed; independent confirmation missing; multiple candidates are reported without claiming multiplicity-adjusted inference. Research review pending.
+限制：45 viewed dates; independent confirmation missing; complete decisions retained; inventory disclosed separately；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
@@ -1221,10 +1427,37 @@
 | fee_bps_sum | 1725.7486965851963 | bps | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | sum_trade_bps | known |
 | UNKNOWN_inventory | 0 | count | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | count | known |
 
-限制：45 previously viewed dates; independent confirmation missing; complete decisions retained; completed subset and UNKNOWN inventory reported separately；Structured execution details remain in the private source bound by contract_hash.；Completed trades only, final inventory flat; no inventory MTM. Sum of per-trade bps is not an account return. Native unit cash is separate.；All 45 dates were previously viewed; independent confirmation missing; multiple candidates are reported without claiming multiplicity-adjusted inference. Research review pending.
+限制：45 previously viewed dates; independent confirmation missing; complete decisions retained; completed subset and UNKNOWN inventory reported separately；Structured execution details remain in the private source bound by contract_hash.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## Taker P1入场归因：扩量未增现金，独立H5归因仍缺对照
+
+评价：exp_20261015_taker_p1_entry_attribution_v1/P1/run-19b13027b7934b37b8cbd564bd04d0cb；来源运行：run-19b13027b7934b37b8cbd564bd04d0cb。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| R1_net_cash | -12.082650999999785 | unit_cash | 45 viewed trading dates, unit1 | continuous ledger realized net cash, terminal flat | known |
+| R1F_net_cash | -12.958141999999796 | unit_cash | 45 viewed trading dates, unit1 | continuous ledger realized net cash, terminal flat | known |
+| R3_net_cash | 4.978629200000155 | unit_cash | 45 viewed trading dates, unit1 | continuous ledger realized net cash, terminal flat | known |
+| A85_net_cash | 3.819104200000145 | unit_cash | 45 viewed trading dates, unit1 | continuous ledger realized net cash, terminal flat | known |
+| A80_net_cash | 0.47937020000026953 | unit_cash | 45 viewed trading dates, unit1 | continuous ledger realized net cash, terminal flat | known |
+| B99_net_cash | 4.966121600000093 | unit_cash | 45 viewed trading dates, unit1 | continuous ledger realized net cash, terminal flat | known |
+
+限制：R0 UNKNOWN full account not comparable；R2 missing: H5 independent numeric value not established；fixed 2s label is descriptive and never gates entry；45 viewed days are exploratory; no independent confirmation；no new L3-L6 action；45 viewed days; R1F full continuous path; R2 absent; independent confirmation absent；No new stage authorized. Preserve current accepted reference; review decision card.；evaluation has no readable pinned parquet facts；Structured inputs details remain in the private source bound by contract_hash.；Structured execution details remain in the private source bound by contract_hash.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
 - fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
 - hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
 - hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
