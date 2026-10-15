@@ -1,6 +1,6 @@
 # 期货短周期研究当前结果
 
-发布版本：`7a2d69aeed5628e7b1fef819793b077cd9ebe777116226d1d540385c09314a8a`；指标快照时间：2026-10-14T06:34:33.966820+00:00。
+发布版本：`b7de5bd7a260abcd838cda659dd8e10f427227e32c5c759b297605c0d081c71d`；指标快照时间：2026-10-15T06:17:10.865097+00:00。
 
 [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/) · [研究来源索引](RESEARCH_INDEX.md)
 
@@ -10,6 +10,9 @@
 
 | 结果 | 角色 | 日期范围（实际日期数） | 技术状态 | 人工复核 |
 | --- | --- | --- | --- | --- |
+| AU阶段2：五档合同三日验收通过，模型增量尚未验证 | candidate | 20260507–20260709（3） | passed | pending |
+| AU阶段3：支持域恢复，五档小幅预测增量待动态验证 | candidate | 20260507–20260709（45） | passed | pending |
+| AU阶段1支持域审计：尺度与历史压缩C1，额外掩码损失为零 | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
 | XAG_B1 | control | 20260507–20260630（38） | passed | pending |
 | XAG_F2_current | current_reference | 20260507–20260630（38） | passed | pending |
 | XAU_archive_O | archive | 20260507–20260630（38） | passed | pending |
@@ -36,6 +39,323 @@
 | D1B target_to_execution | candidate | 20260507–20260603（2） | passed | pending |
 | Maker来源对账与时钟缺口诊断 | reference_with_gaps | 20260507–20260630（38） | gaps | pending |
 | AG F2 current BUY upper10 H5s dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| AG/XAG BUY A80 dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| AG/XAG BUY A85 dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| AG/XAG BUY L dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| AG F2 BUY Q99 fixed H5s dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+
+## AU阶段2：五档合同三日验收通过，模型增量尚未验证
+
+评价：au_support_domain_S2_5392c5c72b1c；来源运行：run-c712afe5ecff4c4dbf69a7380f5c5d89。
+
+实际日期：20260507, 20260603, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| 20260507_native_rows | 60260 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260507_input_eligible | 27920 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260507_old_C1_input_eligible | 0 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260507_target_observable_posthoc | 27912 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260603_native_rows | 59877 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260603_input_eligible | 24309 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260603_old_C1_input_eligible | 0 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260603_target_observable_posthoc | 24305 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260709_native_rows | 63974 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260709_input_eligible | 39194 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260709_old_C1_input_eligible | 13 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| 20260709_target_observable_posthoc | 39182 | rows | AU native decisions on specified date; both new candidate masks identical | count | known |
+| new_fits | 0 | operations | S2 registered canary | count | known |
+| new_replays | 0 | operations | S2 registered canary | count | known |
+| new_raw_decodes | 0 | operations | S2 registered canary | count | known |
+| candidate_training_gate_full45 | unknown | not_evaluated | No new candidate fits or strategy replay in S2 | unavailable | unavailable |
+| candidate_q995_support | unknown | not_evaluated | No new candidate fits or strategy replay in S2 | unavailable | unavailable |
+| prediction_IC_increment | unknown | not_evaluated | No new candidate fits or strategy replay in S2 | unavailable | unavailable |
+| dynamic_net_increment | unknown | not_evaluated | No new candidate fits or strategy replay in S2 | unavailable | unavailable |
+
+限制：Three dates only; full49 source bytes/feature quality and full45 train/q995 gates pending；No new fit/prediction/replay; IC/net null, not zero；Historical tick chain and receive clock limitations remain; no independent dates；G1 approved S2 only; G2 and external report publication pending；20260507/20260603/20260709三日特征canary。两个候选各输入有效91423行，四模型掩码逐行一致。不是新模型预测或动态策略结果；49源日期仅为下一阶段元数据盘点。；Reuse completed identities. S3 must have explicit G2 authorization and new pinned implementation/config; retry export alone if publication fails.；Structured inputs details remain in the private source bound by contract_hash.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AU阶段3：支持域恢复，五档小幅预测增量待动态验证
+
+评价：au_support_domain_S3_56dc4e008be5；来源运行：run-22e6c5efc4ee472ebce19d63e12b9fb5。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| development38_B1_rows | 1301846 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_B1_finite_predictions | 1302172 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_B1_daily_mean_pearson | 0.24557053609622423 | correlation | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_B1_daily_mean_rank_ic | 0.29538275658460555 | correlation | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_B1_q995_signal_rows | 7672 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_B1_q995_observed_rows | 7665 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_B1_q995_missing_label_rows | 7 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_B1_daily_mean_directional_markout_bps | 0.7468189128070477 | bps | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_F2_current_rows | 1301846 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_F2_current_finite_predictions | 1302172 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_F2_current_daily_mean_pearson | 0.24672562178694593 | correlation | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_F2_current_daily_mean_rank_ic | 0.29645986709717553 | correlation | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_F2_current_q995_signal_rows | 7701 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_F2_current_q995_observed_rows | 7694 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_F2_current_q995_missing_label_rows | 7 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_F2_current_daily_mean_directional_markout_bps | 0.7430447694607392 | bps | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_C1_without_2bps_ablation_rows | 1301846 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_without_2bps_ablation_finite_predictions | 1302172 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_without_2bps_ablation_daily_mean_pearson | 0.248626146738892 | correlation | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_C1_without_2bps_ablation_daily_mean_rank_ic | 0.2988284940382824 | correlation | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_C1_without_2bps_ablation_q995_signal_rows | 7921 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_without_2bps_ablation_q995_observed_rows | 7915 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_without_2bps_ablation_q995_missing_label_rows | 6 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_without_2bps_ablation_daily_mean_directional_markout_bps | 0.7536680466004926 | bps | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_C1_AU_visible_L5_rows | 1301846 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_AU_visible_L5_finite_predictions | 1302172 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_AU_visible_L5_daily_mean_pearson | 0.24965217744699295 | correlation | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_C1_AU_visible_L5_daily_mean_rank_ic | 0.29944769337719923 | correlation | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_C1_AU_visible_L5_q995_signal_rows | 7895 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_AU_visible_L5_q995_observed_rows | 7888 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_AU_visible_L5_q995_missing_label_rows | 7 | rows | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| development38_C1_AU_visible_L5_daily_mean_directional_markout_bps | 0.7636672475533867 | bps | development38: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| development38_B1__vs__F2_current_daily_mean_delta_pearson | -0.001155085690721662 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_B1__vs__F2_current_daily_mean_delta_rank_ic | -0.0010771105125700182 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_B1__vs__C1_without_2bps_ablation_daily_mean_delta_pearson | -0.0030556106426677066 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_B1__vs__C1_without_2bps_ablation_daily_mean_delta_rank_ic | -0.003445737453676753 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_B1__vs__C1_AU_visible_L5_daily_mean_delta_pearson | -0.0040816413507686776 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_B1__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.004064936792593719 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_F2_current__vs__C1_without_2bps_ablation_daily_mean_delta_pearson | -0.0019005249519460446 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_F2_current__vs__C1_without_2bps_ablation_daily_mean_delta_rank_ic | -0.002368626941106735 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_F2_current__vs__C1_AU_visible_L5_daily_mean_delta_pearson | -0.0029265556600470157 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_F2_current__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.0029878262800237007 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_C1_without_2bps_ablation__vs__C1_AU_visible_L5_daily_mean_delta_pearson | -0.0010260307081009713 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| development38_C1_without_2bps_ablation__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.0006191993389169655 | correlation_delta_left_minus_right | development38: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_B1_rows | 225782 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_B1_finite_predictions | 225864 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_B1_daily_mean_pearson | 0.2701085357890557 | correlation | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_B1_daily_mean_rank_ic | 0.3172836936221568 | correlation | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_B1_q995_signal_rows | 694 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_B1_q995_observed_rows | 692 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_B1_q995_missing_label_rows | 2 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_B1_daily_mean_directional_markout_bps | 0.8901779872737768 | bps | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_F2_current_rows | 225782 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_F2_current_finite_predictions | 225864 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_F2_current_daily_mean_pearson | 0.2721274473053909 | correlation | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_F2_current_daily_mean_rank_ic | 0.31967930829964414 | correlation | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_F2_current_q995_signal_rows | 728 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_F2_current_q995_observed_rows | 726 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_F2_current_q995_missing_label_rows | 2 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_F2_current_daily_mean_directional_markout_bps | 0.9108732486350647 | bps | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_C1_without_2bps_ablation_rows | 225782 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_without_2bps_ablation_finite_predictions | 225864 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_without_2bps_ablation_daily_mean_pearson | 0.2740971454119993 | correlation | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_C1_without_2bps_ablation_daily_mean_rank_ic | 0.3220588421639578 | correlation | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_C1_without_2bps_ablation_q995_signal_rows | 742 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_without_2bps_ablation_q995_observed_rows | 741 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_without_2bps_ablation_q995_missing_label_rows | 1 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_without_2bps_ablation_daily_mean_directional_markout_bps | 0.9255790411752746 | bps | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_C1_AU_visible_L5_rows | 225782 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_AU_visible_L5_finite_predictions | 225864 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_AU_visible_L5_daily_mean_pearson | 0.27535496544291604 | correlation | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_C1_AU_visible_L5_daily_mean_rank_ic | 0.3230008913087668 | correlation | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_C1_AU_visible_L5_q995_signal_rows | 752 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_AU_visible_L5_q995_observed_rows | 751 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_AU_visible_L5_q995_missing_label_rows | 1 | rows | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| July7_exploratory_C1_AU_visible_L5_daily_mean_directional_markout_bps | 0.919198366710071 | bps | July7_exploratory: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| July7_exploratory_B1__vs__F2_current_daily_mean_delta_pearson | -0.0020189115163351734 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_B1__vs__F2_current_daily_mean_delta_rank_ic | -0.002395614677487271 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_B1__vs__C1_without_2bps_ablation_daily_mean_delta_pearson | -0.003988609622943585 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_B1__vs__C1_without_2bps_ablation_daily_mean_delta_rank_ic | -0.004775148541800984 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_B1__vs__C1_AU_visible_L5_daily_mean_delta_pearson | -0.005246429653860312 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_B1__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.005717197686609983 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_F2_current__vs__C1_without_2bps_ablation_daily_mean_delta_pearson | -0.0019696981066084124 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_F2_current__vs__C1_without_2bps_ablation_daily_mean_delta_rank_ic | -0.002379533864313713 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_F2_current__vs__C1_AU_visible_L5_daily_mean_delta_pearson | -0.003227518137525139 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_F2_current__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.0033215830091227116 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_C1_without_2bps_ablation__vs__C1_AU_visible_L5_daily_mean_delta_pearson | -0.0012578200309167262 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| July7_exploratory_C1_without_2bps_ablation__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.0009420491448089985 | correlation_delta_left_minus_right | July7_exploratory: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_B1_rows | 1527628 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_B1_finite_predictions | 1528036 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_B1_daily_mean_pearson | 0.24938755827066472 | correlation | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_B1_daily_mean_rank_ic | 0.2987895690126691 | correlation | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_B1_q995_signal_rows | 8366 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_B1_q995_observed_rows | 8357 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_B1_q995_missing_label_rows | 9 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_B1_daily_mean_directional_markout_bps | 0.7691192132796502 | bps | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_F2_current_rows | 1527628 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_F2_current_finite_predictions | 1528036 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_F2_current_daily_mean_pearson | 0.2506770168675929 | correlation | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_F2_current_daily_mean_rank_ic | 0.30007178017311514 | correlation | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_F2_current_q995_signal_rows | 8429 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_F2_current_q995_observed_rows | 8420 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_F2_current_q995_missing_label_rows | 9 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_F2_current_daily_mean_directional_markout_bps | 0.7691514217767453 | bps | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_C1_without_2bps_ablation_rows | 1527628 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_without_2bps_ablation_finite_predictions | 1528036 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_without_2bps_ablation_daily_mean_pearson | 0.25258830208804195 | correlation | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_C1_without_2bps_ablation_daily_mean_rank_ic | 0.3024421037467207 | correlation | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_C1_without_2bps_ablation_q995_signal_rows | 8663 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_without_2bps_ablation_q995_observed_rows | 8656 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_without_2bps_ablation_q995_missing_label_rows | 7 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_without_2bps_ablation_daily_mean_directional_markout_bps | 0.7804097568676808 | bps | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_C1_AU_visible_L5_rows | 1527628 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_AU_visible_L5_finite_predictions | 1528036 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_AU_visible_L5_daily_mean_pearson | 0.25365038891302544 | correlation | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_C1_AU_visible_L5_daily_mean_rank_ic | 0.3031115241665542 | correlation | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_C1_AU_visible_L5_q995_signal_rows | 8647 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_AU_visible_L5_q995_observed_rows | 8639 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_AU_visible_L5_q995_missing_label_rows | 8 | rows | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | count | known |
+| combined45_C1_AU_visible_L5_daily_mean_directional_markout_bps | 0.7878609771999822 | bps | combined45: own finite prediction and posthoc label pool; q995 counts retain missing labels separately | equal_weight_daily | known |
+| combined45_B1__vs__F2_current_daily_mean_delta_pearson | -0.0012894585969282083 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_B1__vs__F2_current_daily_mean_delta_rank_ic | -0.0012822111604460353 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_B1__vs__C1_without_2bps_ablation_daily_mean_delta_pearson | -0.0032007438173772876 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_B1__vs__C1_without_2bps_ablation_daily_mean_delta_rank_ic | -0.0036525347340516335 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_B1__vs__C1_AU_visible_L5_daily_mean_delta_pearson | -0.00426283064236071 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_B1__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.004321955153885138 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_F2_current__vs__C1_without_2bps_ablation_daily_mean_delta_pearson | -0.0019112852204490795 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_F2_current__vs__C1_without_2bps_ablation_daily_mean_delta_rank_ic | -0.0023703235736055985 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_F2_current__vs__C1_AU_visible_L5_daily_mean_delta_pearson | -0.0029733720454325017 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_F2_current__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.0030397439934391024 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_C1_without_2bps_ablation__vs__C1_AU_visible_L5_daily_mean_delta_pearson | -0.0010620868249834221 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| combined45_C1_without_2bps_ablation__vs__C1_AU_visible_L5_daily_mean_delta_rank_ic | -0.000669420419833504 | correlation_delta_left_minus_right | combined45: finite predictions for both and observable posthoc label | equal_weight_daily | known |
+| new_dynamic_net_bps | unknown | bps | No S3 strategy replay | unavailable | unavailable |
+
+限制：Small predictive effect; q995 fixed2s response is not dynamic trades or PnL；All dates previously used; no independent confirmation；Receive clock and historical tick identity limitations remain；Original computation process exit receipt unknown; successful separately registered read-only acceptance does not rewrite it；S4/external publication not authorized；45个已用OOS日期（38开发+7七月探索），49训练/输入日期；四模型各1528036有限预测、1527628同池可评价。无新策略或独立确认。原计算退出回执缺失，当前run为只读恢复验收及报告成功。；Reuse all completed models/features/predictions. G3 explicit approval required for new dynamic work; export failures never trigger research recomputation.；could not read pinned parquet for asset au_S3_models_predictions_56dc4e008be5@6c7bbc91f7a43f5cd7e45ac7e5f51bd2e882bc36e2892c8d02bd43fbb1fa7fe1: MemoryError；Structured inputs details remain in the private source bound by contract_hash.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AU阶段1支持域审计：尺度与历史压缩C1，额外掩码损失为零
+
+评价：au_support_domain_s1_8c668ebc2586；来源运行：run-1b90848ce0544fd387ab8f18c2b245ff。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| OOS_B1_rows | 2742760 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_B1_old_valid | 1528036 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_B1_own_valid | 1528036 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_B1_extra_mask_loss | 0 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_B1_target_valid_after_old | 1527628 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_C1_COMBO_FULL_O_rows | 2742760 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_C1_COMBO_FULL_O_old_valid | 1475 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_C1_COMBO_FULL_O_own_valid | 1475 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_C1_COMBO_FULL_O_extra_mask_loss | 0 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_C1_COMBO_FULL_O_target_valid_after_old | 1412 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_F2_current_rows | 2742760 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_F2_current_old_valid | 1528036 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_F2_current_own_valid | 1528036 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_F2_current_extra_mask_loss | 0 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| OOS_F2_current_target_valid_after_old | 1527628 | rows | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_B1_rows | 5400000 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_B1_old_valid | 2843121 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_B1_own_valid | 2843121 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_B1_extra_mask_loss | 0 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_B1_target_valid_after_old | 2842327 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_C1_COMBO_FULL_O_rows | 5400000 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_C1_COMBO_FULL_O_old_valid | 2206 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_C1_COMBO_FULL_O_own_valid | 2206 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_C1_COMBO_FULL_O_extra_mask_loss | 0 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_C1_COMBO_FULL_O_target_valid_after_old | 2072 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_F2_current_rows | 5400000 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_F2_current_old_valid | 2843121 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_F2_current_own_valid | 2843121 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_F2_current_extra_mask_loss | 0 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| sampled_outer_train_F2_current_target_valid_after_old | 2842327 | row_occurrences | 45 AU folds; overlaps across training folds are repeated occurrences | sum | known |
+| SHFE/AG_20260507_tick_bps_median | 0.521498787515319 | bps | 64121 saved valid L1 quote rows | median | known |
+| SHFE/AG_20260507_two_bps_ticks_approx_median | 3.8351 | ticks | 64121 saved valid L1 quote rows | median | known |
+| SHFE/AG_20260507_price_median | 19175.5 | CNY/kg | 64121 saved valid L1 quote rows | median | known |
+| SHFE/AG_20260507_2bps_observable | 1.0 | ratio | 64121 saved valid L1 rows; Binance deeper book unavailable | count_ratio | known |
+| Binance/XAGUSDT_20260507_tick_bps_median | 1.2909055702575356 | bps | 644371 saved valid L1 quote rows | median | known |
+| Binance/XAGUSDT_20260507_two_bps_ticks_approx_median | 1.5493000000000001 | ticks | 644371 saved valid L1 quote rows | median | known |
+| Binance/XAGUSDT_20260507_price_median | 77.465 | USDT/troy_ounce | 644371 saved valid L1 quote rows | median | known |
+| Binance/XAGUSDT_20260507_2bps_observable | unknown | ratio | 644371 saved valid L1 rows; Binance deeper book unavailable | count_ratio | unavailable |
+| SHFE/AU_20260507_tick_bps_median | 0.19330395113276116 | bps | 60264 saved valid L1 quote rows | median | known |
+| SHFE/AU_20260507_two_bps_ticks_approx_median | 10.3464 | ticks | 60264 saved valid L1 quote rows | median | known |
+| SHFE/AU_20260507_price_median | 1034.6399999999999 | CNY/g | 60264 saved valid L1 quote rows | median | known |
+| SHFE/AU_20260507_2bps_observable | 0.014768352581972654 | ratio | 60264 saved valid L1 rows; Binance deeper book unavailable | count_ratio | known |
+| Binance/XAUUSDT_20260507_tick_bps_median | 0.02126607582419335 | bps | 794849 saved valid L1 quote rows | median | known |
+| Binance/XAUUSDT_20260507_two_bps_ticks_approx_median | 94.0465 | ticks | 794849 saved valid L1 quote rows | median | known |
+| Binance/XAUUSDT_20260507_price_median | 4702.325 | USDT/troy_ounce | 794849 saved valid L1 quote rows | median | known |
+| Binance/XAUUSDT_20260507_2bps_observable | unknown | ratio | 794849 saved valid L1 rows; Binance deeper book unavailable | count_ratio | unavailable |
+| SHFE/AG_20260603_tick_bps_median | 0.5488323591558958 | bps | 65194 saved valid L1 quote rows | median | known |
+| SHFE/AG_20260603_two_bps_ticks_approx_median | 3.6441000000000003 | ticks | 65194 saved valid L1 quote rows | median | known |
+| SHFE/AG_20260603_price_median | 18220.5 | CNY/kg | 65194 saved valid L1 quote rows | median | known |
+| SHFE/AG_20260603_2bps_observable | 1.0 | ratio | 65194 saved valid L1 rows; Binance deeper book unavailable | count_ratio | known |
+| Binance/XAGUSDT_20260603_tick_bps_median | 1.3270519540840027 | bps | 687988 saved valid L1 quote rows | median | known |
+| Binance/XAGUSDT_20260603_two_bps_ticks_approx_median | 1.5070999999999997 | ticks | 687988 saved valid L1 quote rows | median | known |
+| Binance/XAGUSDT_20260603_price_median | 75.35499999999999 | USDT/troy_ounce | 687988 saved valid L1 quote rows | median | known |
+| Binance/XAGUSDT_20260603_2bps_observable | unknown | ratio | 687988 saved valid L1 rows; Binance deeper book unavailable | count_ratio | unavailable |
+| SHFE/AU_20260603_tick_bps_median | 0.20384866275277233 | bps | 59880 saved valid L1 quote rows | median | known |
+| SHFE/AU_20260603_two_bps_ticks_approx_median | 9.811200000000001 | ticks | 59880 saved valid L1 quote rows | median | known |
+| SHFE/AU_20260603_price_median | 981.12 | CNY/g | 59880 saved valid L1 quote rows | median | known |
+| SHFE/AU_20260603_2bps_observable | 0.030410821643286574 | ratio | 59880 saved valid L1 rows; Binance deeper book unavailable | count_ratio | known |
+| Binance/XAUUSDT_20260603_tick_bps_median | 0.022271690120612336 | bps | 977296 saved valid L1 quote rows | median | known |
+| Binance/XAUUSDT_20260603_two_bps_ticks_approx_median | 89.8001 | ticks | 977296 saved valid L1 quote rows | median | known |
+| Binance/XAUUSDT_20260603_price_median | 4490.005 | USDT/troy_ounce | 977296 saved valid L1 quote rows | median | known |
+| Binance/XAUUSDT_20260603_2bps_observable | unknown | ratio | 977296 saved valid L1 rows; Binance deeper book unavailable | count_ratio | unavailable |
+| SHFE/AG_20260709_tick_bps_median | 0.703309069170447 | bps | 66162 saved valid L1 quote rows | median | known |
+| SHFE/AG_20260709_two_bps_ticks_approx_median | 2.8436999999999997 | ticks | 66162 saved valid L1 quote rows | median | known |
+| SHFE/AG_20260709_price_median | 14218.5 | CNY/kg | 66162 saved valid L1 quote rows | median | known |
+| SHFE/AG_20260709_2bps_observable | 1.0 | ratio | 66162 saved valid L1 rows; Binance deeper book unavailable | count_ratio | known |
+| Binance/XAGUSDT_20260709_tick_bps_median | 1.7183606839075523 | bps | 936613 saved valid L1 quote rows | median | known |
+| Binance/XAGUSDT_20260709_two_bps_ticks_approx_median | 1.1639 | ticks | 936613 saved valid L1 quote rows | median | known |
+| Binance/XAGUSDT_20260709_price_median | 58.195 | USDT/troy_ounce | 936613 saved valid L1 quote rows | median | known |
+| Binance/XAGUSDT_20260709_2bps_observable | unknown | ratio | 936613 saved valid L1 rows; Binance deeper book unavailable | count_ratio | unavailable |
+| SHFE/AU_20260709_tick_bps_median | 0.224278104850014 | bps | 63978 saved valid L1 quote rows | median | known |
+| SHFE/AU_20260709_two_bps_ticks_approx_median | 8.9175 | ticks | 63978 saved valid L1 quote rows | median | known |
+| SHFE/AU_20260709_price_median | 891.75 | CNY/g | 63978 saved valid L1 quote rows | median | known |
+| SHFE/AU_20260709_2bps_observable | 0.09381349839007158 | ratio | 63978 saved valid L1 rows; Binance deeper book unavailable | count_ratio | known |
+| Binance/XAUUSDT_20260709_tick_bps_median | 0.024563295313446074 | bps | 886776 saved valid L1 quote rows | median | known |
+| Binance/XAUUSDT_20260709_two_bps_ticks_approx_median | 81.42229999999999 | ticks | 886776 saved valid L1 quote rows | median | known |
+| Binance/XAUUSDT_20260709_price_median | 4071.115 | USDT/troy_ounce | 886776 saved valid L1 quote rows | median | known |
+| Binance/XAUUSDT_20260709_2bps_observable | unknown | ratio | 886776 saved valid L1 rows; Binance deeper book unavailable | count_ratio | unavailable |
+| AG_B1_legal_train_min | 68279.0 | rows | 45 sampled outer-train folds | fold_min | known |
+| AG_B1_legal_train_median | 105551.0 | rows | 45 sampled outer-train folds | fold_median | known |
+| AG_B1_legal_train_max | 107566.0 | rows | 45 sampled outer-train folds | fold_max | known |
+| AG_C1_COMBO_FULL_O_legal_train_min | 66943.0 | rows | 45 sampled outer-train folds | fold_min | known |
+| AG_C1_COMBO_FULL_O_legal_train_median | 99417.0 | rows | 45 sampled outer-train folds | fold_median | known |
+| AG_C1_COMBO_FULL_O_legal_train_max | 103729.0 | rows | 45 sampled outer-train folds | fold_max | known |
+| AG_F2_current_legal_train_min | 68279.0 | rows | 45 sampled outer-train folds | fold_min | known |
+| AG_F2_current_legal_train_median | 105551.0 | rows | 45 sampled outer-train folds | fold_median | known |
+| AG_F2_current_legal_train_max | 107566.0 | rows | 45 sampled outer-train folds | fold_max | known |
+| AU_B1_legal_train_min | 46479.0 | rows | 45 sampled outer-train folds | fold_min | known |
+| AU_B1_legal_train_median | 61081.0 | rows | 45 sampled outer-train folds | fold_median | known |
+| AU_B1_legal_train_max | 75749.0 | rows | 45 sampled outer-train folds | fold_max | known |
+| AU_C1_COMBO_FULL_O_legal_train_min | 4.0 | rows | 45 sampled outer-train folds | fold_min | known |
+| AU_C1_COMBO_FULL_O_legal_train_median | 21.0 | rows | 45 sampled outer-train folds | fold_median | known |
+| AU_C1_COMBO_FULL_O_legal_train_max | 128.0 | rows | 45 sampled outer-train folds | fold_max | known |
+| AU_F2_current_legal_train_min | 46479.0 | rows | 45 sampled outer-train folds | fold_min | known |
+| AU_F2_current_legal_train_median | 61081.0 | rows | 45 sampled outer-train folds | fold_median | known |
+| AU_F2_current_legal_train_max | 75749.0 | rows | 45 sampled outer-train folds | fold_max | known |
+| new_fits | 0 | fits | S1 entire execution | count | known |
+| new_strategy_replays | 0 | replays | S1 entire execution | count | known |
+
+限制：S1 audit only; research review and S2 permission pending；Historical tick change chain incomplete; three quote dates agree with dated official rules；Exchange-time proxy cannot distinguish transport gaps; no reset relaxation；Column degeneration and q995 reconstructed for three representative AU folds, not all 45；Binance saved L1 cannot establish L5 coverage；Original 38 and July seven dates already used; no independent confirmation; AU0915 and execution gaps unchanged；45个AU OOS日期及采样训练逐fold掩码；270模型身份。五档与重置仅20260507/20260603/20260709双产品；q995复算仅这三个AU fold。不是新策略收益结果。；G1 pending. S2 worker not implemented; no queued work. Reuse succeeded audit evidence; retry only export on publication failure.；evaluation has no readable pinned parquet facts；Structured inputs details remain in the private source bound by contract_hash.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
 
 ## XAG_B1
 
@@ -800,6 +1120,108 @@
 | UNKNOWN_inventory | 0 | count | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | count | known |
 
 限制：45 previously viewed dates; independent confirmation missing; complete decisions retained; completed subset and UNKNOWN inventory reported separately；Structured execution details remain in the private source bound by contract_hash.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AG/XAG BUY A80 dynamic path
+
+评价：exp_20261014_xag_taker_deviation_relaxation_v1/A80/run-a0800789d0834bc39c7b472f174a8ce3；来源运行：run-a0800789d0834bc39c7b472f174a8ce3。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 2721 | count | completed trades; fullperiod cash only if flat, no inventory MTM | count | known |
+| completed_subset_net_bps_sum | 69.44177110965983 | bps | completed trades; fullperiod cash only if flat, no inventory MTM | sum_trade_bps | known |
+| completed_subset_mean_net_bps | 0.025520680304909896 | bps | completed trades; fullperiod cash only if flat, no inventory MTM | mean | known |
+| completed_subset_unit_cash_net | 0.47937020000026953 | unit cash | completed trades; fullperiod cash only if flat, no inventory MTM | sum_cash | known |
+| fullperiod_net_unit_cash | 0.47937020000026953 | unit cash | completed trades; fullperiod cash only if flat, no inventory MTM | sum_cash | known |
+| UNKNOWN_inventory | 0 | count | completed trades; fullperiod cash only if flat, no inventory MTM | count | known |
+
+限制：45 viewed dates; independent confirmation missing; complete decisions retained; inventory disclosed separately；Structured execution details remain in the private source bound by contract_hash.；Completed trades only, final inventory flat; no inventory MTM. Sum of per-trade bps is not an account return. Native unit cash is separate.；All 45 dates were previously viewed; independent confirmation missing; multiple candidates are reported without claiming multiplicity-adjusted inference. Research review pending.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AG/XAG BUY A85 dynamic path
+
+评价：exp_20261014_xag_taker_deviation_relaxation_v1/A85/run-a0800789d0834bc39c7b472f174a8ce3；来源运行：run-a0800789d0834bc39c7b472f174a8ce3。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 2064 | count | completed trades; fullperiod cash only if flat, no inventory MTM | count | known |
+| completed_subset_net_bps_sum | 589.6477288025247 | bps | completed trades; fullperiod cash only if flat, no inventory MTM | sum_trade_bps | known |
+| completed_subset_mean_net_bps | 0.28568203914851004 | bps | completed trades; fullperiod cash only if flat, no inventory MTM | mean | known |
+| completed_subset_unit_cash_net | 3.819104200000145 | unit cash | completed trades; fullperiod cash only if flat, no inventory MTM | sum_cash | known |
+| fullperiod_net_unit_cash | 3.819104200000145 | unit cash | completed trades; fullperiod cash only if flat, no inventory MTM | sum_cash | known |
+| UNKNOWN_inventory | 0 | count | completed trades; fullperiod cash only if flat, no inventory MTM | count | known |
+
+限制：45 viewed dates; independent confirmation missing; complete decisions retained; inventory disclosed separately；Structured execution details remain in the private source bound by contract_hash.；Completed trades only, final inventory flat; no inventory MTM. Sum of per-trade bps is not an account return. Native unit cash is separate.；All 45 dates were previously viewed; independent confirmation missing; multiple candidates are reported without claiming multiplicity-adjusted inference. Research review pending.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AG/XAG BUY L dynamic path
+
+评价：exp_20261014_xag_taker_deviation_relaxation_v1/L/run-a0800789d0834bc39c7b472f174a8ce3；来源运行：run-a0800789d0834bc39c7b472f174a8ce3。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 6219 | count | completed trades; fullperiod cash only if flat, no inventory MTM | count | known |
+| completed_subset_net_bps_sum | -1731.4638802271425 | bps | completed trades; fullperiod cash only if flat, no inventory MTM | sum_trade_bps | known |
+| completed_subset_mean_net_bps | -0.27841516003009203 | bps | completed trades; fullperiod cash only if flat, no inventory MTM | mean | known |
+| completed_subset_unit_cash_net | -12.082650999999785 | unit cash | completed trades; fullperiod cash only if flat, no inventory MTM | sum_cash | known |
+| fullperiod_net_unit_cash | -12.082650999999785 | unit cash | completed trades; fullperiod cash only if flat, no inventory MTM | sum_cash | known |
+| UNKNOWN_inventory | 0 | count | completed trades; fullperiod cash only if flat, no inventory MTM | count | known |
+
+限制：45 viewed dates; independent confirmation missing; complete decisions retained; inventory disclosed separately；Structured execution details remain in the private source bound by contract_hash.；Completed trades only, final inventory flat; no inventory MTM. Sum of per-trade bps is not an account return. Native unit cash is separate.；All 45 dates were previously viewed; independent confirmation missing; multiple candidates are reported without claiming multiplicity-adjusted inference. Research review pending.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## AG F2 BUY Q99 fixed H5s dynamic path
+
+评价：exp_20261014_xag_taker_signal_threshold_relaxation_v1/AG_F2_B99_fixed_H5s/run-8d5f2189376c40908fe62839af8de959；来源运行：run-8d5f2189376c40908fe62839af8de959。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| completed_trades | 1438 | count | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | count | known |
+| completed_subset_net_bps_sum | 752.5277233540244 | bps | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | sum_trade_bps | known |
+| completed_subset_mean_net_bps | 0.5233155238901421 | bps | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | mean | known |
+| fullperiod_net_unit_cash | 4.966121600000093 | unit cash | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | sum_cash | known |
+| gross_mid_bps_sum | 4684.555873855445 | bps | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | sum_trade_bps | known |
+| crossing_bps_sum | 2206.2794539162237 | bps | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | sum_trade_bps | known |
+| fee_bps_sum | 1725.7486965851963 | bps | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | sum_trade_bps | known |
+| UNKNOWN_inventory | 0 | count | accepted completed trades; inventory MTM unavailable; fullperiod cash only if flat | count | known |
+
+限制：45 previously viewed dates; independent confirmation missing; complete decisions retained; completed subset and UNKNOWN inventory reported separately；Structured execution details remain in the private source bound by contract_hash.；Completed trades only, final inventory flat; no inventory MTM. Sum of per-trade bps is not an account return. Native unit cash is separate.；All 45 dates were previously viewed; independent confirmation missing; multiple candidates are reported without claiming multiplicity-adjusted inference. Research review pending.
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable

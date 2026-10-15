@@ -1,6 +1,6 @@
 # 研究来源索引
 
-发布版本：`7a2d69aeed5628e7b1fef819793b077cd9ebe777116226d1d540385c09314a8a`
+发布版本：`b7de5bd7a260abcd838cda659dd8e10f427227e32c5c759b297605c0d081c71d`
 
 [当前结果](RESEARCH_CURRENT.md) · [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/)
 
@@ -8,6 +8,9 @@
 
 | 实验 | 来源运行 | 研究方向 | 评价 | 合同身份 |
 | --- | --- | --- | --- | --- |
+| exp_20261014_au_support_domain_alignment_v1 | run-c712afe5ecff4c4dbf69a7380f5c5d89 | xau_dynamic_2s | au_support_domain_S2_5392c5c72b1c | f1cf3cd1d038b6acb556e625f31923ee9791afa46bdfd7e43d85066b27c7bfc7 |
+| exp_20261014_au_support_domain_alignment_v1 | run-22e6c5efc4ee472ebce19d63e12b9fb5 | xau_dynamic_2s | au_support_domain_S3_56dc4e008be5 | 9df5d2f97ba67dc12f7a66388e514307bb1b4b05bb44f2eea3d8331a1f929713 |
+| exp_20261014_au_support_domain_alignment_v1 | run-1b90848ce0544fd387ab8f18c2b245ff | xau_dynamic_2s | au_support_domain_s1_8c668ebc2586 | dd098d916db218ea4850b6a8972c4b8912eebf2cb882516992f2934d79edf2b1 |
 | exp_20260929_d0_inventory_profit_gap_v1 | run-298cb2a311524a7099cffc2a5ee5d06c | xag_dynamic_2s | d0/XAG_B1 | 06d9dcf19f08f30074eb7e328f92e428d099329b1219b72ed218ba54585957ec |
 | exp_20260929_d0_inventory_profit_gap_v1 | run-298cb2a311524a7099cffc2a5ee5d06c | xag_dynamic_2s | d0/XAG_F2_current | b9fdfd3a56e0ac9ecffabf7d8babbcf1c0b56a3e53e0bebdb3f984f12e8b121f |
 | exp_20260929_d0_inventory_profit_gap_v1 | run-298cb2a311524a7099cffc2a5ee5d06c | xau_archive_1s | d0/XAU_archive_O | fdfb524a5a97c9a0f0a9b08bfc86b9d10b11aa93cb4ffe228cdd22d48ca6274c |
@@ -34,3 +37,7 @@
 | exp_20260930_d1b_event_maker_economics_diagnostic_v1 | run-1d32a4dc6d3a44a08f9c34e51dc07481 | xag_route_b | exp_20260930_d1b_event_maker_economics_diagnostic_v1/target_to_execution/run-1d32a4dc6d3a44a08f9c34e51dc07481 | 17d6914979b87764c7b14ded5972e412b7abd92f0048e68f65c9426668ca891c |
 | exp_20261013_xag_maker_clock_entry_cancel_fullperiod_v1 | run-5209b853c9f34d23bb2aca473ebf4470 | xag_maker | exp_20261013_xag_maker_clock_entry_cancel_fullperiod_v1/source_clock_inventory/run-5209b853c9f34d23bb2aca473ebf4470 | 6fc4fb9d8f969037b8f4e31ce96833930864c1c635666e0bb313d0db35424efa |
 | exp_20261013_xag_taker_prediction_deviation_entry_v1 | run-89dd1254667c405591f356294cb89723 | xag_dynamic_2s | exp_20261013_xag_taker_prediction_deviation_entry_v1/AG_F2_buy_upper10_H5s/run-89dd1254667c405591f356294cb89723 | 633edad1ae66249df6bf2e5894ed87f53851225e867899033a3bfebfb3d34c9a |
+| exp_20261014_xag_taker_deviation_relaxation_v1 | run-a0800789d0834bc39c7b472f174a8ce3 | xag_dynamic_2s | exp_20261014_xag_taker_deviation_relaxation_v1/A80/run-a0800789d0834bc39c7b472f174a8ce3 | b3441b7b4370be96c81b4aad22585f757a99ae3f1847d2bb63ccc548ced2c5f4 |
+| exp_20261014_xag_taker_deviation_relaxation_v1 | run-a0800789d0834bc39c7b472f174a8ce3 | xag_dynamic_2s | exp_20261014_xag_taker_deviation_relaxation_v1/A85/run-a0800789d0834bc39c7b472f174a8ce3 | 9776cc8bfe3cfc5ae9a82333de4dc1dbe3f26243740cc86e79fc8a2ce95df809 |
+| exp_20261014_xag_taker_deviation_relaxation_v1 | run-a0800789d0834bc39c7b472f174a8ce3 | xag_dynamic_2s | exp_20261014_xag_taker_deviation_relaxation_v1/L/run-a0800789d0834bc39c7b472f174a8ce3 | 84b7c457e2b52598f0d3b052352000f3eecd0099cd63c3c6f6b334b48537154f |
+| exp_20261014_xag_taker_signal_threshold_relaxation_v1 | run-8d5f2189376c40908fe62839af8de959 | xag_dynamic_2s | exp_20261014_xag_taker_signal_threshold_relaxation_v1/AG_F2_B99_fixed_H5s/run-8d5f2189376c40908fe62839af8de959 | f8e31d0700f45b65ba6046907094853e9c0f4d5258b3dba636a6d8c24e723c7f |
