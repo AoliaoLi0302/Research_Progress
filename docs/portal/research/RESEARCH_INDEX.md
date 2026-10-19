@@ -1,6 +1,6 @@
 # 研究来源索引
 
-发布版本：`a5e90652d5ad4accbb87cd08c7ea190e4378237a48bbd64cd0c30b94a300f1a4`
+发布版本：`b5ac0d5cc935abcd601a6e9343b9c1e06a7cac916b44f26abb3e04869d473a06`
 
 [当前结果](RESEARCH_CURRENT.md) · [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/)
 
@@ -47,3 +47,5 @@
 | exp_20261014_xag_taker_deviation_relaxation_v1 | run-a0800789d0834bc39c7b472f174a8ce3 | xag_dynamic_2s | exp_20261014_xag_taker_deviation_relaxation_v1/L/run-a0800789d0834bc39c7b472f174a8ce3 | 84b7c457e2b52598f0d3b052352000f3eecd0099cd63c3c6f6b334b48537154f |
 | exp_20261014_xag_taker_signal_threshold_relaxation_v1 | run-8d5f2189376c40908fe62839af8de959 | xag_dynamic_2s | exp_20261014_xag_taker_signal_threshold_relaxation_v1/AG_F2_B99_fixed_H5s/run-8d5f2189376c40908fe62839af8de959 | f8e31d0700f45b65ba6046907094853e9c0f4d5258b3dba636a6d8c24e723c7f |
 | exp_20261015_taker_p1_entry_attribution_v1 | run-19b13027b7934b37b8cbd564bd04d0cb | xag_dynamic_2s | exp_20261015_taker_p1_entry_attribution_v1/P1/run-19b13027b7934b37b8cbd564bd04d0cb | 9025f82d1bcabd1715f7cb6c12a6b158e8137eba81a36d92a80afbb65a88bfff |
+| exp_20261018_taker_r2_score_control_v1 | run-1523b94d568641a3b0dec799b13cd73c | xag_dynamic_2s | exp_20261018_taker_r2_score_control_v1/R2/run-1523b94d568641a3b0dec799b13cd73c | 686e222753b0932ff854ac9084f71811563095e36fcc32795fcf6399f1d16cd6 |
+| exp_20261018_taker_r2_score_control_v1 | run-a0dc7c5ae2a24e1794b9e5370d32f889 | xag_dynamic_2s | exp_20261018_taker_r2_score_control_v1/support/run-a0dc7c5ae2a24e1794b9e5370d32f889 | 689c4e6eb205aa7ea4d4df06955b0e026ef61f2105b377b6ba7f1c7f6aed3ce3 |

@@ -740,7 +740,7 @@
     }).then(function (catalog) {
       if (!catalog || !Array.isArray(catalog.evaluations)) throw new Error("catalog.evaluations is missing or invalid");
       if (String(catalog.release_id || "") !== String(state.release.release_id)) throw new Error("release/catalog identity mismatch");
-      state.catalog = catalog; state.evaluations = catalog.evaluations; $("program-title").textContent = catalog.program && catalog.program.title ? catalog.program.title : "Research portal"; $("footer-contract").textContent = "Schema v" + text(catalog.schema_version || 1); setLoad("Snapshot catalog loaded. " + state.evaluations.length + " evaluation(s).", false); initialiseFilters(); var requested = new URLSearchParams(location.search).get("evaluation");
+      state.catalog = catalog; state.evaluations = catalog.evaluations; $("program-title").textContent = catalog.program && catalog.program.title ? catalog.program.title : "Research portal"; $("footer-contract").textContent = "Schema v" + text(catalog.schema_version || 1); setLoad("Snapshot catalog loaded. " + state.evaluations.length + " evaluation(s).", false); initialiseFilters(); var requested = new URLSearchParams(location.search).get("evaluation"); if(requested && window.ResearchBaselineContinuations) requested=window.ResearchBaselineContinuations.target(requested,state.evaluations);
       if (requested && state.evaluations.some(function(e){return e.evaluation_id===requested;})) {
         Array.from($("evaluation-filter").options).forEach(function(o){o.selected=o.value===requested;});
       }

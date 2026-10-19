@@ -1,6 +1,6 @@
 # 期货短周期研究当前结果
 
-发布版本：`a5e90652d5ad4accbb87cd08c7ea190e4378237a48bbd64cd0c30b94a300f1a4`；指标快照时间：2026-10-15T10:26:32.614242+00:00。
+发布版本：`b5ac0d5cc935abcd601a6e9343b9c1e06a7cac916b44f26abb3e04869d473a06`；指标快照时间：2026-10-19T05:52:26.943344+00:00。
 
 [交互门户](https://aoliaoli0302.github.io/Research_Progress/portal/) · [研究来源索引](RESEARCH_INDEX.md)
 
@@ -49,6 +49,8 @@
 | AG/XAG BUY L dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
 | AG F2 BUY Q99 fixed H5s dynamic path | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
 | Taker P1入场归因：扩量未增现金，独立H5归因仍缺对照 | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| 纯score与原H5的单一路径比较：inconclusive | reference_with_gaps | 20260507–20260709（45） | gaps | pending |
+| R2历史支持已盘点；校准数字合同待确认 | reference_with_gaps | 20260507–20260709（45） | pending | pending |
 
 ## AU 可见五档组合：已归档，未替换F2基线
 
@@ -1453,6 +1455,57 @@
 | B99_net_cash | 4.966121600000093 | unit_cash | 45 viewed trading dates, unit1 | continuous ledger realized net cash, terminal flat | known |
 
 限制：R0 UNKNOWN full account not comparable；R2 missing: H5 independent numeric value not established；fixed 2s label is descriptive and never gates entry；45 viewed days are exploratory; no independent confirmation；no new L3-L6 action；45 viewed days; R1F full continuous path; R2 absent; independent confirmation absent；No new stage authorized. Preserve current accepted reference; review decision card.；evaluation has no readable pinned parquet facts；Structured inputs details remain in the private source bound by contract_hash.；Structured execution details remain in the private source bound by contract_hash.
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## 纯score与原H5的单一路径比较：inconclusive
+
+评价：exp_20261018_taker_r2_score_control_v1/R2/run-1523b94d568641a3b0dec799b13cd73c；来源运行：run-1523b94d568641a3b0dec799b13cd73c。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| R2_net_cash | 3.458660199999952 | unit_cash | 45complete_trading_dates | frozen45date_comparison | known |
+| R3_net_cash | 4.978629200000155 | unit_cash | 45complete_trading_dates | frozen45date_comparison | known |
+| R3_minus_R2_cash | 1.519969000000203 | unit_cash | 45complete_trading_dates | frozen45date_comparison | known |
+| R2_completed_trades | 1289 | trades | 45complete_trading_dates | frozen45date_comparison | known |
+| R2_mean_net_bps | 0.4281187474052707 | bps_per_trade | R2completed_trades | frozen45date_comparison | known |
+
+限制：45 dates already viewed; July7 not independent holdout；H5 threshold selected on development38；historical fitted calibration not live historical OOS；exchange+60ms modeled availability; observed deployment/latency unknown；no daily inventory MTM; daily sums attributed to exits；native proxy execution, unit quantity1 and multiplier1；interval/economic margin or stability conditions do not establish equivalence/advantage；45previously viewed dates=38development+7July; historical fitted calibration; complete native exit flow; no independent technical/research acceptance；evaluation has no readable pinned parquet facts
+
+- PnL_path：missing_facts；no equity or account-value source is projected
+- cancel_attribution：missing_facts；cancel attribution facts unavailable
+- cost_breakdown：missing_facts；native crossing/fee facts unavailable
+- daily_metrics：missing_facts；no timestamped daily facts
+- fill_markout：missing_facts；registered fill markout/entry-edge fact is unavailable
+- hourly_IC：missing_facts；no finite prediction/label pairs in pinned assets
+- hourly_RankIC：missing_facts；no finite non-constant prediction/label pairs in pinned assets
+- maker_fill：missing_facts；maker order/fill facts unavailable
+- signal_bins：missing_facts；no registered source training-bin column
+
+## R2历史支持已盘点；校准数字合同待确认
+
+评价：exp_20261018_taker_r2_score_control_v1/support/run-a0dc7c5ae2a24e1794b9e5370d32f889；来源运行：run-a0dc7c5ae2a24e1794b9e5370d32f889。
+
+实际日期：20260507, 20260508, 20260511, 20260512, 20260513, 20260514, 20260515, 20260518, 20260519, 20260520, 20260521, 20260522, 20260525, 20260526, 20260527, 20260528, 20260529, 20260601, 20260602, 20260603, 20260604, 20260605, 20260608, 20260609, 20260610, 20260611, 20260612, 20260615, 20260616, 20260617, 20260618, 20260622, 20260623, 20260624, 20260625, 20260626, 20260629, 20260630, 20260701, 20260702, 20260703, 20260706, 20260707, 20260708, 20260709
+
+| 原生指标 | 值 | 单位 | 分母 | 汇总 | 状态 |
+| --- | --- | --- | --- | --- | --- |
+| folds_inventory_complete | 45 | folds | expected45 | support_inventory | known |
+| first_fold_common_candidates | 331 | events | first_fold_common_candidate_pool | support_inventory | known |
+| first_fold_h5_selected | 35 | events | first_fold_common331 | support_inventory | known |
+| R2_net_cash | unknown | unit_cash | R2_not_run | support_inventory | unavailable |
+
+限制：Historical fitted calibration; not live historical OOS；Model input and label-endpoint availability uses frozen proxy timestamps; observed model deployment time unknown；Numeric support/economic contract not approved；Independent technical review pending；45-fold return-blind support only; no R2 path/thresholds; no independent review or confirmation；evaluation has no readable pinned parquet facts
 
 - PnL_path：missing_facts；no equity or account-value source is projected
 - cancel_attribution：missing_facts；cancel attribution facts unavailable
