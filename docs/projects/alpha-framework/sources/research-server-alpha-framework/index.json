@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "project_id": "alpha-framework",
+  "source_id": "research-server-alpha-framework",
+  "title": "Alpha Framework",
+  "description": "独立离线因子研究与回测",
+  "existing_portal": null,
+  "experiments": []
+}

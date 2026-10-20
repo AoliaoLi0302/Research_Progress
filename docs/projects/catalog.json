@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "project_id": "alpha-framework",
+      "source_id": "research-server-alpha-framework",
+      "title": "Alpha Framework",
+      "description": "独立离线因子研究与回测",
+      "release_id": "73523904366b46417897ed7805b8e7e40277513819fb9cf59252682ec86a1e9e",
+      "entry": "alpha-framework/sources/research-server-alpha-framework/",
+      "experiments": 0
+    },
+    {
+      "project_id": "alpha-internal",
+      "source_id": "qrdev-a-internal-98ab999e59314164aef6b9ed41e58840",
+      "title": "跨所数据微观结构研究",
+      "description": "跨交易所数据时钟、微观结构与离线因子研究",
+      "release_id": "0f01bbd3eba1cf91a5bab0f6fffdd538580b71ebdd97a08eb8f783b7ce8e2898",
+      "entry": "alpha-internal/sources/qrdev-a-internal-98ab999e59314164aef6b9ed41e58840/",
+      "experiments": 0
+    },
+    {
+      "project_id": "fut-alpha-framework",
+      "source_id": "research-server-fut-alpha",
+      "title": "期货跨市场研究",
+      "description": "期货短周期跨市场信号与执行研究",
+      "release_id": "2af5de29417240af5acb2a29db06f32ae7e6e83f9a79d186e38d2791917f2d0d",
+      "entry": "fut-alpha-framework/sources/research-server-fut-alpha/",
+      "experiments": 0
+    }
+  ]
+}
